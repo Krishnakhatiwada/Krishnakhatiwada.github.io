@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+      <div id="loading">
+          loading....
+      </div>
+    <div class="container"  id="main" hidden>
+      <img
+        
+        height="250"
+        id="profile"
+      />
+      <h2 id="name"></h2>
+      <p id="bio"></p>
+      <h4 id="follower"></h3>
+      <p>Check me on <a href="#" id="link">GitHub</a></p>
+      <a class="twitter-timeline" data-width="220" data-height="400" href="https://twitter.com/kricna22?ref_src=twsrc%5Etfw">Tweets by kricna22</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <em>Hellow</em>
+    </div>
+    <script>
+      fetch("https://api.github.com/users/Krishnakhatiwada")
+        .then((response) => response.json())
+        .then(function (data) {
+            console.log(data);
+            let no_of_follower =data.followers;
+            let textfollower =`Followed By ${no_of_follower}  people on github`;
+
+          document.getElementById("profile").src = data.avatar_url;
+          document.getElementById("name").textContent = data.name;
+          document.getElementById("bio").textContent = data.bio;
+          document.getElementById("follower").textContent = textfollower;
+          document.getElementById("link").href = data.html_url;
+
+          document.getElementById("main").hidden= false;
+          document.getElementById("loading").hidden= true;
+        })
+        .catch((err) => {
+          // handle errors
+        });
+
+       
+
+        // console.log(2+4*5+1);
+    </script>
+  </body>
+</html>
