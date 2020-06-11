@@ -10,13 +10,17 @@
 
 #profile {
     width: 100%;
-
     background-color: lavender;
 }
 
 #profilepic {
-    /* border-radius: 10rem; */
+
     height: 181px;
+    margin-top: 20px;
+
+}
+
+#name {
     margin-top: 25px;
 }
 
