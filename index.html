@@ -3,54 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .container {
-        text-align: center;
-      }
-    </style>
+
+    <title>InternShip</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/custom.css" />
   </head>
   <body>
-      <div id="loading">
-          loading....
+    <div class="container">
+      <div class="spinner-border" id="loading"></div>
+
+      <div class="row" id="main" hidden>
+        <div class="col-md-4" id="profile">
+          <img
+            class="rounded-circle img-fluid"
+            id="profilepic"
+            alt="profile Image"
+            title="profile picture"
+          />
+
+          <h2 id="name"></h2>
+          <b>Roll: 20</b>
+          <br />
+          <span>Group E</span>
+        </div>
+        <div class="col-md-8" id="repo">
+          <div class="row">
+            <div class="col-md-12" id="table">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Code</th>
+                    <th>Demo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>GitHub Assignment</td>
+                    <td><a href="#" id="code">Code</a></td>
+                    <td><a href="#" id="demo">Demo</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
-    <div class="container"  id="main" hidden>
-      <img
-        
-        height="250"
-        id="profile"
-      />
-      <h2 id="name"></h2>
-      <p id="bio"></p>
-      <h4 id="follower"></h3>
-      <p>Check me on <a href="#" id="link">GitHub</a></p>
-      <a class="twitter-timeline" data-width="220" data-height="400" href="https://twitter.com/kricna22?ref_src=twsrc%5Etfw">Tweets by kricna22</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-     
     </div>
+
     <script>
       fetch("https://api.github.com/users/Krishnakhatiwada")
         .then((response) => response.json())
         .then(function (data) {
-            console.log(data);
-            let no_of_follower =data.followers;
-            let textfollower =`Followed By ${no_of_follower}  people on github`;
+          let no_of_follower = data.followers;
+          let textfollower = `Followed By ${no_of_follower}  people on github`;
 
-          document.getElementById("profile").src = data.avatar_url;
+          document.getElementById("profilepic").src = data.avatar_url;
           document.getElementById("name").textContent = data.name;
-          document.getElementById("bio").textContent = data.bio;
-          document.getElementById("follower").textContent = textfollower;
-          document.getElementById("link").href = data.html_url;
-
-          document.getElementById("main").hidden= false;
-          document.getElementById("loading").hidden= true;
+          document.getElementById("demo").href =
+            "https://krishnakhatiwada.github.io/";
+          document.getElementById("code").href =
+            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io";
+          document.getElementById("main").hidden = false;
+          document.getElementById("loading").hidden = true;
         })
         .catch((err) => {
           // handle errors
         });
-
-       
-
-        // console.log(2+4*5+1);
     </script>
   </body>
 </html>
