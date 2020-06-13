@@ -1,0 +1,110 @@
+.logo img {
+    height: 30px;
+    width: 167px;
+}
+
+.searchbar img {
+    margin-left: 20px;
+    height: 15px;
+    width: 185px;
+}
+
+.header {
+    padding-top: 14px;
+    padding-left: 23px;
+    padding-right: 17px;
+    background-color: #7dd7e8;
+    height: 62px;
+}
+
+.searchbar.right {
+    padding-top: 10px;
+}
+
+.list-name {
+    margin-top: 18px;
+}
+
+.list-name ul {
+    list-style-type: none;
+    width: 130px;
+    height: 11px;
+}
+
+.list-name ul li {
+    display: inline;
+    font-size: 13px;
+}
+
+.title h4 {
+    font-size: 15px;
+    text-align: right;
+}
+
+.banner-text ul {
+    padding-left: 0px;
+}
+
+.banner-text ul li {
+    list-style: none;
+    display: inline;
+    text-align: left;
+    padding-right: 22px;
+}
+
+
+
+
+.box-icon img {
+    width: 10px;
+    height: 16px;
+    padding-right: 6px;
+}
+
+.user-icon.right img {
+    width: 17px;
+    height: 15px;
+    padding-left: 22px;
+    padding-top: 0px;
+    padding-right: 6px;
+}
+
+.user-icon span {
+    opacity: 0.3;
+}
+
+.policy.left ul li {
+    display: inline;
+    padding-right: 4px;
+
+}
+
+.banner-img {
+    padding-right: 18px;
+}
+
+.footer {
+    margin-top: 455px;
+}
+
+.banner-content {
+    width: auto;
+    height: 16px;
+    padding-left: 30px;
+    padding-top: 9px;
+    padding-bottom: 8px;
+    background-color: #f5f5f5;
+    font-size: 13px;
+}
+
+
+.footer-content {
+    background-color: #727272;
+    width: auto;
+    height: 12px;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 23px;
+    font-size: 13px;
+}

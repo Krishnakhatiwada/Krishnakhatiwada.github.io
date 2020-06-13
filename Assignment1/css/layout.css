@@ -1,0 +1,18 @@
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.main-content {
+    width: 1024px;
+    margin-left: 170px;
+    height: 609px;
+
+}
+
+.main {
+    text-align: center;
+}
