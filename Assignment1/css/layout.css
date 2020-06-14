@@ -7,7 +7,7 @@
 }
 
 .main-content {
-    width: 1024px;
+    width: 750px;
     margin-left: 170px;
     height: 609px;
 
@@ -22,7 +22,7 @@
     padding-left: 23px;
     padding-right: 17px;
     background-color: #7dd7e8;
-    height: 62px;
+    height: 48px;
 }
 
 .banner {
@@ -35,6 +35,21 @@
     font-size: 13px;
 }
 
+.background-image {
+    margin-left: 14px;
+    margin-right: 14px;
+    border-bottom: 2px solid black;
+    height: 47px;
+    border-color: #2fc1d9;
+}
+
+.bottom-content {
+
+    margin-left: 14px;
+    margin-right: 14px;
+    height: 365px;
+
+}
 
 .footer {
     background-color: #727272;
@@ -55,4 +70,8 @@
 
 .content-holder {
     margin-top: 24px;
+}
+
+.entries.right {
+    width: 416px;
 }

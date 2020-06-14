@@ -1,5 +1,9 @@
+.logo.left {
+    margin-top: 3px;
+}
+
 .logo img {
-    height: 30px;
+    height: 40px;
     width: 167px;
 }
 
@@ -9,11 +13,30 @@
     width: 185px;
 }
 
-
-
-.searchbar.right {
-    padding-top: 10px;
+.searchbar-img {
+    background: url(../images/serchbox.png) no-repeat, center;
+    width: 206px;
+    height: 20px;
+    margin-top: 14px;
 }
+
+.button {
+    margin-top: 17px;
+    background: url(../images/button.png) no-repeat, center;
+    width: 40px;
+    height: 16px;
+}
+
+.button p {
+    font-size: 8px;
+    color: white;
+    padding-top: 3px;
+}
+
+.list-bar.right {
+    margin-top: 3px;
+}
+
 
 .list-name {
     margin-top: 18px;
@@ -43,7 +66,7 @@
     list-style: none;
     display: inline;
     text-align: left;
-    padding-right: 22px;
+    padding-right: 5px;
 }
 
 
@@ -155,4 +178,108 @@ ul.breadcumb-ele li {
 
 .video-tuts-element {
     padding-top: 6px;
+}
+
+.entriens-title h1 {
+    float: left;
+}
+
+
+
+.entries-title {
+    height: 25px;
+}
+
+.entries-title h1 {
+    float: left;
+    font-size: 25px;
+}
+
+.left-curve {
+    background: url(../images/entriestitle.png) no-repeat, center;
+    height: 47px;
+    width: 188px;
+    opacity: 1.4;
+    background-size: 190px;
+    font-size: 11px;
+    color: white;
+}
+
+.right-curve {
+    background: url(../images/entriestitle2.png) no-repeat, center;
+    height: 47px;
+    width: 199px;
+    opacity: 1.4;
+    background-size: 198px;
+    font-size: 11px;
+    color: white;
+
+}
+
+
+
+.friend-left {
+    background: url(../images/frnd1.png) no-repeat, left;
+    width: 86px;
+    margin-top: 27px;
+    height: 22px;
+    margin-left: 5px;
+    padding-top: 8px;
+}
+
+
+
+.friend-right {
+    background: url(../images/frnd1.png) no-repeat, left;
+    width: 85px;
+    margin-top: 26px;
+    height: 20px;
+    margin-left: 5px;
+    margin-right: 4px;
+    padding-top: 8px;
+
+}
+
+.user-img.left {
+    width: 61px;
+
+    margin-top: 12px;
+    margin-right: 2px;
+    height: 55px;
+}
+
+.user-img.left img {
+    height: 55px;
+    width: 59px;
+}
+
+.user-bio.right {
+
+    width: 315px;
+    height: 51px;
+    margin-top: 12px;
+    font-size: 12px;
+    text-align: left;
+}
+
+b.producer {
+    color: #2fc1da;
+}
+
+span.subs {
+    color: green;
+}
+
+b.invite {
+    color: #d7401d;
+}
+
+.movie-review1,
+.movie-review2,
+.movie-review3,
+.movie-review4,
+.movie-review5 {
+
+    border-bottom: 2px solid #efefef;
+    height: 73px;
 }
