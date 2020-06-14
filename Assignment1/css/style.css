@@ -294,3 +294,8 @@ b.invite {
     border-bottom: 2px solid #efefef;
     height: 73px;
 }
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
