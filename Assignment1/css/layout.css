@@ -16,3 +16,43 @@
 .main {
     text-align: center;
 }
+
+.header {
+    padding-top: 14px;
+    padding-left: 23px;
+    padding-right: 17px;
+    background-color: #7dd7e8;
+    height: 62px;
+}
+
+.banner {
+    width: auto;
+    height: 16px;
+    padding-left: 30px;
+    padding-top: 9px;
+    padding-bottom: 8px;
+    background-color: #f5f5f5;
+    font-size: 13px;
+}
+
+
+.footer {
+    background-color: #727272;
+    width: auto;
+    height: 12px;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 23px;
+    font-size: 13px;
+    margin-top: 455px;
+}
+
+
+.content-main {
+    margin: 0px 24px 0px 24px;
+}
+
+.content-holder {
+    margin-top: 24px;
+}

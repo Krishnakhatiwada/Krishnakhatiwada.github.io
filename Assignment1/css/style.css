@@ -9,13 +9,7 @@
     width: 185px;
 }
 
-.header {
-    padding-top: 14px;
-    padding-left: 23px;
-    padding-right: 17px;
-    background-color: #7dd7e8;
-    height: 62px;
-}
+
 
 .searchbar.right {
     padding-top: 10px;
@@ -76,6 +70,7 @@
 .policy.left ul li {
     display: inline;
     padding-right: 4px;
+    list-style-type: cirlce;
 
 }
 
@@ -83,28 +78,81 @@
     padding-right: 18px;
 }
 
-.footer {
-    margin-top: 455px;
+
+
+.main-left-content {
+    width: 20%;
+    background: #f5f5f5;
+    height: 440px;
 }
 
-.banner-content {
-    width: auto;
-    height: 16px;
-    padding-left: 30px;
-    padding-top: 9px;
-    padding-bottom: 8px;
-    background-color: #f5f5f5;
-    font-size: 13px;
+.main-right-content {
+    width: 80%;
 }
 
+.recent-search.left {
+    background: #f5f5f5;
+    height: 440px;
+    width: 142px;
 
-.footer-content {
-    background-color: #727272;
-    width: auto;
-    height: 12px;
+}
+
+.recent-title,
+.video-title {
+    background: #2fc1da;
+    height: 11px;
+    padding-top: 11px;
+    padding-bottom: 11px;
     color: white;
+    margin-bottom: 4px;
+}
+
+.search-downlaod {
+    height: 97px;
+    font-size: 12px;
+}
+
+.search-breadcumb {
+    font-size: 12px;
+}
+
+.elements ul {
+
+    list-style-type: none;
+    text-align: left;
+    padding-left: 8px;
+    width: 105px;
+}
+
+ul.download-ele li {
+    padding-top: 10px;
+    padding-bottom: 23px;
+    width: 105px;
+}
+
+ul.breadcumb-ele li {
     padding-top: 12px;
-    padding-bottom: 12px;
-    padding-right: 23px;
-    font-size: 13px;
+    padding-bottom: 24px;
+    font-size: 11px;
+    padding-right: 5px;
+
+}
+
+.video-tuts-element ul {
+    list-style: none;
+    display: inline;
+    font-size: 12px;
+    text-align: left;
+    padding-left: 0px;
+}
+
+.video-tuts-element ul li {
+    padding-top: 5px;
+    padding-bottom: 24px;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.video-tuts-element {
+    padding-top: 6px;
 }
