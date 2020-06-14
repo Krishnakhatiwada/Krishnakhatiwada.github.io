@@ -144,27 +144,37 @@
     list-style-type: none;
     text-align: left;
     padding-left: 8px;
-    width: 105px;
+    width: 132px;
+
 }
 
 ul.download-ele li {
-    padding-top: 10px;
-    padding-bottom: 23px;
-    width: 105px;
+    padding-top: 2px;
+    padding-bottom: 35px;
+    width: 126px;
+    font-size: 11px;
 }
 
 ul.breadcumb-ele li {
-    padding-top: 12px;
-    padding-bottom: 24px;
+    padding-bottom: 32px;
     font-size: 11px;
     padding-right: 5px;
+}
 
+ul.download-ele img {
+    height: 12px;
+    float: right;
+}
+
+ul.breadcumb-ele img {
+    height: 10px;
+    float: right;
 }
 
 .video-tuts-element ul {
     list-style: none;
     display: inline;
-    font-size: 12px;
+    font-size: 11px;
     text-align: left;
     padding-left: 0px;
 }
@@ -188,6 +198,7 @@ ul.breadcumb-ele li {
 
 .entries-title {
     height: 25px;
+    margin-left: 20px;
 }
 
 .entries-title h1 {
@@ -224,7 +235,7 @@ ul.breadcumb-ele li {
     margin-top: 27px;
     height: 22px;
     margin-left: 5px;
-    padding-top: 8px;
+    padding-top: 6px;
 }
 
 
@@ -236,7 +247,7 @@ ul.breadcumb-ele li {
     height: 20px;
     margin-left: 5px;
     margin-right: 4px;
-    padding-top: 8px;
+    padding-top: 6px;
 
 }
 
