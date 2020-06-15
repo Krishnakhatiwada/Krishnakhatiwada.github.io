@@ -1,10 +1,12 @@
-.logo.left {
-    margin-top: 3px;
+.logo {
+    margin-top: 22px;
+    margin-bottom: 16px;
+    margin-left: 33px;
 }
 
 .logo img {
-    height: 40px;
-    width: 167px;
+    height: 52px;
+    width: 227px;
 }
 
 .searchbar img {
@@ -15,13 +17,14 @@
 
 .searchbar-img {
     background: url(../images/serchbox.png) no-repeat, center;
-    width: 206px;
+    width: 278px;
     height: 20px;
-    margin-top: 14px;
+    margin-top: 24px;
+    background-size: 224px;
 }
 
 .button {
-    margin-top: 17px;
+    margin-top: 27px;
     background: url(../images/button.png) no-repeat, center;
     width: 40px;
     height: 16px;
@@ -34,7 +37,9 @@
 }
 
 .list-bar.right {
-    margin-top: 3px;
+    margin-top: 27px;
+    margin-right: 31px;
+    margin-bottom: 24px;
 }
 
 
@@ -50,11 +55,11 @@
 
 .list-name ul li {
     display: inline;
-    font-size: 13px;
+    font-size: 11px;
 }
 
 .title h4 {
-    font-size: 15px;
+    font-size: 14px;
     text-align: right;
 }
 
@@ -73,7 +78,7 @@
 
 
 .box-icon img {
-    width: 10px;
+    width: 11px;
     height: 16px;
     padding-right: 6px;
 }
@@ -83,7 +88,7 @@
     height: 15px;
     padding-left: 22px;
     padding-top: 0px;
-    padding-right: 6px;
+    padding-right: 8px;
 }
 
 .user-icon span {
@@ -98,67 +103,74 @@
 }
 
 .banner-img {
-    padding-right: 18px;
+    padding-right: 30px;
 }
-
 
 
 .main-left-content {
-    width: 20%;
-    background: #f5f5f5;
-    height: 440px;
+    width: 758px;
+
 }
 
 .main-right-content {
-    width: 80%;
+    width: 176px;
 }
 
 .recent-search.left {
     background: #f5f5f5;
-    height: 440px;
-    width: 142px;
-
+    height: 604px;
+    width: 195px;
 }
 
 .recent-title,
 .video-title {
     background: #2fc1da;
-    height: 11px;
-    padding-top: 11px;
-    padding-bottom: 11px;
+    height: 14px;
+    padding-top: 13px;
+    padding-bottom: 15px;
     color: white;
-    margin-bottom: 4px;
+
 }
 
 .search-downlaod {
-    height: 97px;
-    font-size: 12px;
+    height: 132px;
+    font-size: 14px;
 }
 
 .search-breadcumb {
-    font-size: 12px;
+    font-size: 13px;
 }
 
-.elements ul {
+.download-elements ul {
 
     list-style-type: none;
     text-align: left;
-    padding-left: 8px;
-    width: 132px;
+    padding-left: 11px;
+    width: 180px;
+
+}
+
+.breadcumb-elements ul {
+
+    list-style-type: none;
+    text-align: left;
+    padding-left: 11px;
+    width: 180px;
 
 }
 
 ul.download-ele li {
-    padding-top: 2px;
+    padding-top: 16px;
     padding-bottom: 35px;
-    width: 126px;
-    font-size: 11px;
+
+    font-size: 12px;
 }
 
 ul.breadcumb-ele li {
+    padding-top: 16px;
     padding-bottom: 32px;
-    font-size: 11px;
-    padding-right: 5px;
+    font-size: 12px;
+
 }
 
 ul.download-ele img {
@@ -167,38 +179,38 @@ ul.download-ele img {
 }
 
 ul.breadcumb-ele img {
-    height: 10px;
+    height: 11px;
     float: right;
 }
 
 .video-tuts-element ul {
     list-style: none;
     display: inline;
-    font-size: 11px;
+    font-size: 12px;
     text-align: left;
     padding-left: 0px;
 }
 
 .video-tuts-element ul li {
-    padding-top: 5px;
-    padding-bottom: 24px;
+    padding-top: 13px;
+    padding-bottom: 32px;
     padding-left: 10px;
     padding-right: 5px;
 }
 
 .video-tuts-element {
-    padding-top: 6px;
+
+    background-color: #f5f5f5;
+    height: 562px;
 }
 
-.entriens-title h1 {
-    float: left;
+.video-title h4 {
+    font-size: 12px;
 }
-
-
 
 .entries-title {
-    height: 25px;
-    margin-left: 20px;
+    height: 29px;
+    margin-bottom: 11px;
 }
 
 .entries-title h1 {
@@ -208,20 +220,20 @@ ul.breadcumb-ele img {
 
 .left-curve {
     background: url(../images/entriestitle.png) no-repeat, center;
-    height: 47px;
-    width: 188px;
-    opacity: 1.4;
-    background-size: 190px;
+    height: 67px;
+    width: 255px;
+    /* opacity: 1.4; */
+    background-size: 265px;
     font-size: 11px;
     color: white;
 }
 
 .right-curve {
     background: url(../images/entriestitle2.png) no-repeat, center;
-    height: 47px;
-    width: 199px;
-    opacity: 1.4;
-    background-size: 198px;
+    height: 67px;
+    width: 258px;
+    /* opacity: 1.4; */
+    background-size: 258px;
     font-size: 11px;
     color: white;
 
@@ -231,50 +243,52 @@ ul.breadcumb-ele img {
 
 .friend-left {
     background: url(../images/frnd1.png) no-repeat, left;
-    width: 86px;
-    margin-top: 27px;
-    height: 22px;
-    margin-left: 5px;
-    padding-top: 6px;
-}
-
-
-
-.friend-right {
-    background: url(../images/frnd1.png) no-repeat, left;
-    width: 85px;
-    margin-top: 26px;
+    width: 115px;
+    margin-top: 40px;
     height: 20px;
-    margin-left: 5px;
-    margin-right: 4px;
+    margin-left: 11px;
     padding-top: 6px;
-
 }
 
-.user-img.left {
-    width: 61px;
 
-    margin-top: 12px;
-    margin-right: 2px;
-    height: 55px;
+
+.friend-right,
+.right-friend-right {
+    background: url(../images/frnd.png) no-repeat, left;
+    width: 115px;
+    margin-top: 40px;
+    height: 20px;
+    margin-left: 3px;
+    margin-right: 11px;
+    padding-top: 6px;
 }
+
 
 .user-img.left img {
-    height: 55px;
-    width: 59px;
+    height: 65px;
+    width: 65px;
 }
 
 .user-bio.right {
-
-    width: 315px;
-    height: 51px;
-    margin-top: 12px;
+    width: 440px;
+    height: 34px;
     font-size: 12px;
     text-align: left;
+    line-height: 17px
+}
+
+.user-bio.right h4 {
+    padding-bottom: 15px;
+    font-size: 13px;
+}
+
+.subscription {
+    padding-bottom: 16px;
 }
 
 b.producer {
     color: #2fc1da;
+
 }
 
 span.subs {
@@ -285,15 +299,7 @@ b.invite {
     color: #d7401d;
 }
 
-.movie-review1,
-.movie-review2,
-.movie-review3,
-.movie-review4,
-.movie-review5 {
 
-    border-bottom: 2px solid #efefef;
-    height: 73px;
-}
 
 a:link {
     text-decoration: none;

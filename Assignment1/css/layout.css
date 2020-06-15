@@ -7,47 +7,44 @@
 }
 
 .main-content {
-    width: 750px;
-    margin-left: 170px;
-    height: 609px;
+    width: 1002px;
+    height: 837px;
+
 
 }
 
 .main {
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    /* min-width: 1002px; */
 }
 
 .header {
-    padding-top: 14px;
-    padding-left: 23px;
-    padding-right: 17px;
+
     background-color: #7dd7e8;
-    height: 48px;
+    height: 86px;
+    width: auto;
 }
 
 .banner {
     width: auto;
-    height: 16px;
-    padding-left: 30px;
-    padding-top: 9px;
-    padding-bottom: 8px;
+    height: 11px;
+    padding-left: 41px;
+    padding-top: 14px;
+    padding-bottom: 15px;
     background-color: #f5f5f5;
-    font-size: 13px;
+    font-size: 11px;
 }
 
 .background-image {
-    margin-left: 14px;
-    margin-right: 14px;
+
     border-bottom: 2px solid black;
-    height: 47px;
+    height: 66px;
     border-color: #2fc1d9;
 }
 
 .bottom-content {
-
-    margin-left: 14px;
-    margin-right: 14px;
-    height: 365px;
+    height: 508px;
 
 }
 
@@ -59,19 +56,31 @@
     padding-top: 12px;
     padding-bottom: 12px;
     padding-right: 23px;
-    font-size: 13px;
-    margin-top: 455px;
+    font-size: 11px;
+
 }
 
 
 .content-main {
-    margin: 0px 24px 0px 24px;
+    margin: 33px;
+    height: 615px;
+
 }
 
-.content-holder {
-    margin-top: 24px;
+.movie-review1,
+.movie-review2,
+.movie-review3,
+.movie-review4,
+.movie-review5 {
+    border-bottom: 2px solid #efefef;
+    height: 71px;
+    padding-top: 12px;
+    padding-bottom: 15px;
 }
 
 .entries.right {
-    width: 416px;
+    width: 514px;
+    height: auto;
+    margin-left: 25px;
+    margin-right: 24px;
 }
