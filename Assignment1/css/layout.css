@@ -44,7 +44,7 @@
 
 .content-holder {
     max-width: 946px;
-    padding-left: 140px;
+
 
 }
 
@@ -85,7 +85,7 @@ content.clearfix {
     margin: 33px;
     height: 615px;
     width: 1002px;
-
+    padding-left: 104px;
 }
 
 .movie-review1,
