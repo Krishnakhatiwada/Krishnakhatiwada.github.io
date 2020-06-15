@@ -1,8 +1,8 @@
-.logo {
+/* .logo {
     margin-top: 22px;
     margin-bottom: 16px;
     margin-left: 33px;
-}
+} */
 
 .logo img {
     height: 52px;
@@ -16,31 +16,36 @@
 }
 
 .searchbar-img {
-    background: url(../images/serchbox.png) no-repeat, center;
+    background: url("../images/serchbox.png") no-repeat;
+
     width: 278px;
     height: 20px;
-    margin-top: 24px;
-    background-size: 224px;
+    margin-top: 20px;
+    background-size: 270px;
+}
+
+.searchbar-img input {
+    height: 15px;
+    width: 263px;
+    background: transparent;
+    border-style: none;
+    font-size: 12px;
 }
 
 .button {
-    margin-top: 27px;
+    margin-top: 20px;
     background: url(../images/button.png) no-repeat, center;
-    width: 40px;
-    height: 16px;
+    width: 57px;
+    height: 25px;
+    background-size: 55px;
 }
 
 .button p {
     font-size: 8px;
     color: white;
-    padding-top: 3px;
+    padding-top: 6px;
 }
 
-.list-bar.right {
-    margin-top: 27px;
-    margin-right: 31px;
-    margin-bottom: 24px;
-}
 
 
 .list-name {
@@ -69,7 +74,7 @@
 
 .banner-text ul li {
     list-style: none;
-    display: inline;
+    display: inline-block;
     text-align: left;
     padding-right: 5px;
 }
