@@ -520,16 +520,19 @@ a:link {
         .policy {
             text-align: left;
             width: 70%;
+            margin-left: 15px;
         }
 
         .copyright {
             text-align: right;
             width: 18%;
             margin-top: 20px;
+            margin-right: 10px;
         }
 
         .middle-body {
             height: 563px;
+
         }
     }
 
