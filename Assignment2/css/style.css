@@ -1,0 +1,187 @@
+/* Header Css Start */
+.header-content {
+
+    margin-left: 30px;
+    margin-right: 15px;
+}
+
+.logo {
+    width: 60%;
+    margin-top: 5px;
+}
+
+.logout {
+    width: 20%;
+}
+
+.logo img {
+    width: 250px;
+}
+
+
+.title,
+.list-name {
+    width: 100%;
+    display: none;
+}
+
+.title h4 {
+    text-align: center;
+    font-size: 16px;
+
+    padding-top: 9px;
+}
+
+.list-name ul {
+    list-style-type: none;
+
+}
+
+.list-name ul li {
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: white;
+
+}
+
+.logout img {
+    width: 68px;
+    background: transparent;
+    top: px;
+    position: absolute;
+    right: 0px;
+}
+
+/* Header Css End */
+
+
+
+.article {
+    position: absolute;
+    text-align: left;
+    top: 5px;
+    width: 100%;
+}
+
+.sidebar {
+    border: 1px solid green;
+    width: 30%;
+    margin-top: 1%;
+    margin-right: 2%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    background: #2fc1da;
+    display: none;
+}
+
+
+
+
+
+
+.navigation {
+    margin-right: 15px;
+    margin-left: 15px;
+
+}
+
+/* Middlew Content */
+.middle-body {
+    margin-left: 15px;
+    margin-right: 15px;
+    position: relative;
+    height: 832px;
+
+}
+
+.image-review1,
+.image-review2,
+.image-review3,
+.image-review4,
+.image-review5 {
+    border-bottom: 2px solid grey;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.recent {
+    display: none;
+}
+
+.entries {
+    text-align: center;
+    width: 100%;
+}
+
+.user-img {
+    width: 40%;
+}
+
+.user-img img {
+    width: 115px;
+    max-width: 100%;
+}
+
+.movie-review {
+    width: 60%;
+    text-align: left;
+}
+
+
+.subscription {
+    padding-bottom: 2px;
+}
+
+b.producer {
+    color: #2fc1da;
+
+}
+
+span.subs {
+    color: green;
+}
+
+b.invite {
+    color: #d7401d;
+}
+
+
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+/* Middle Content End */
+
+/* Footer Css Start */
+.policy {
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.policy.left ul li {
+    width: 100%;
+    display: inline-block;
+
+    padding-bottom: 10px;
+
+}
+
+.copyright {
+    width: 100%;
+
+    margin-left: 15px;
+    text-align: center;
+    color: white;
+    height: 50px;
+    margin-top: 10px;
+}
+
+/* Footer Css End */
