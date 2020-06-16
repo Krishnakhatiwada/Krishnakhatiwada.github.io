@@ -15,7 +15,14 @@
 }
 
 .logout {
-    width: 20%;
+    width: 100%;
+}
+
+.username-logout {
+    margin-bottom: 5px;
+    border: 2px solid lightblue;
+    border-radius: 10px;
+    display: none;
 }
 
 .logo img {
@@ -26,7 +33,7 @@
 .title,
 .list-name {
     width: 100%;
-    display: none;
+    display: block;
 }
 
 .title h4 {
@@ -52,12 +59,21 @@
 
 }
 
-.logout img {
+.hamburger-img {
+    background: url(../images/breadcumb.png) no-repeat, right;
+    position: absolute;
+    top: 17px;
+    right: 0;
+    width: 76px;
+    height: 40px;
+}
+
+/* .logout img {
     width: 69px;
     background: transparent;
     position: absolute;
     right: 0px;
-}
+} */
 
 /* Header Css End */
 
@@ -186,6 +202,10 @@ a:link {
 
 
 @media (min-width:768px) {
+    .username-logout {
+        display: none;
+    }
+
     .logo {
         width: 80%;
         margin-top: 5px;
@@ -194,8 +214,8 @@ a:link {
     .search-bar {
         display: block;
         position: absolute;
-        top: 31px;
-        left: 320px;
+        top: 46%;
+        left: 40%;
     }
 
     .search-bar input {
@@ -235,8 +255,8 @@ a:link {
     }
 
     .banner-img {
-        width: 48%;
-        margin-top: 10px;
+        width: 39%;
+        margin-top: 6px;
     }
 
     .banner-text ul li {
@@ -247,11 +267,13 @@ a:link {
     }
 
     .box-icon {
-        margin-top: -24px;
+        padding-bottom: 4px;
+        font-size: 12px;
     }
 
-    .user-icon.right {
-        margin-top: -24px;
+    .user-icon {
+        padding-bottom: 4px;
+        font-size: 12px;
     }
 
 
@@ -303,6 +325,212 @@ a:link {
         padding-top: 8px;
     }
 
-    @media (min-width: 1200px) {}
+    @media (min-width: 1200px) {
+        .logo {
+            width: 70%;
+        }
+
+        .search-bar {
+            display: block;
+            position: absolute;
+            top: 46%;
+            left: 37%;
+        }
+
+        .search-form button {
+            margin-left: 7px;
+        }
+
+        .hamburger-img {
+
+            display: none;
+        }
+
+        .logout {
+            width: 30%;
+        }
+
+        .title h4 {
+            text-align: right;
+            font-size: 15px;
+            padding-top: 9px;
+        }
+
+        .username-logout {
+            margin-bottom: 5px;
+            display: block;
+            border: none;
+            text-align: right;
+        }
+
+        .list-name ul li {
+            display: inline;
+            margin-left: 10px;
+        }
+
+        .title {
+            padding-bottom: 5px;
+        }
+
+        .box-icon {
+            margin-top: 0px;
+            padding-bottom: 8px;
+            margin-left: 60px;
+        }
+
+        .user-icon {
+            margin-top: 0px;
+            padding-bottom: 8px;
+
+        }
+
+        .banner-text {
+            width: 58%;
+        }
+
+        .banner-img {
+            width: 33%;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+        .banner-text ul {
+            font-size: 13px;
+        }
+
+        .banner-text ul li {
+            padding-right: 12px;
+        }
+
+        .recent {
+            display: block;
+            width: 25%;
+            margin-left: 15px;
+            margin-top: 12px;
+        }
+
+        .entries {
+            text-align: left;
+            width: 71%;
+            margin-top: 12px;
+        }
+
+        .sidebar {
+            height: 510px;
+            width: 18.7%;
+        }
+
+        .search-downlaod {
+            height: 145px;
+            line-height: 24px;
+
+        }
+
+        .recent-title {
+            height: 36px;
+            background-color: #2fc1da;
+            width: 100%;
+            text-align: center;
+            padding-top: 7px;
+            color: white;
+        }
+
+        .download-elements ul,
+        .breadcumb-elements ul {
+            list-style-type: none;
+            text-align: left;
+            padding-left: 11px;
+            width: 190px;
+            font-size: 16px;
+        }
+
+        .breadcumb-elements ul {
+            list-style-type: none;
+            text-align: left;
+            padding-left: 11px;
+            width: 188px;
+            line-height: 18px;
+
+        }
+
+        .download-elements {
+            background: #f5f5f5;
+            height: auto;
+        }
+
+        .download-elements {
+            background: #f5f5f5;
+            height: 102px;
+
+        }
+
+        .breadcumb-elements {
+            height: 316px;
+            background-color: #f5f5f5;
+            line-height: 20px;
+        }
+
+        .article {
+            width: 80%;
+
+        }
+
+        ul.download-ele img,
+        ul.breadcumb-ele img {
+            width: 22px;
+            float: right;
+        }
+
+        ul.download-ele li,
+        ul.breadcumb-ele li {
+            padding-top: 10px;
+
+            padding-bottom: 11px;
+        }
+
+
+        .sidebar ul {
+
+            font-size: 14px;
+            line-height: 35px;
+        }
+
+        .image-review1,
+        .image-review2,
+        .image-review3,
+        .image-review4,
+        .image-review5 {
+            padding-top: 7px;
+            padding-bottom: 1px;
+        }
+
+        .user-img {
+            width: 12%;
+        }
+
+        .movie-review {
+            width: 86%;
+            text-align: left;
+        }
+
+        .policy.left ul li {
+            display: inline;
+        }
+
+        .policy {
+            text-align: left;
+            width: 70%;
+        }
+
+        .copyright {
+            text-align: right;
+            width: 18%;
+            margin-top: 20px;
+        }
+
+        .middle-body {
+            height: 563px;
+        }
+    }
 
 }

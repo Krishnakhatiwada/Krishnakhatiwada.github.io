@@ -31,9 +31,10 @@
 }
 
 
+
+
 .footer {
     position: relative;
-    border: 1px solid black;
     min-width: 480px;
     background-color: #727272;
 }
@@ -45,4 +46,26 @@
         background-color: #f5f5f5;
         display: block;
     }
+}
+
+@media (min-width:1200px) {
+    .logout img {
+
+        display: none;
+    }
+
+    .container {
+        margin-left: 70px;
+        margin-right: 70px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .footer {
+        height: 70px;
+
+    }
+
+
+
+
 }
