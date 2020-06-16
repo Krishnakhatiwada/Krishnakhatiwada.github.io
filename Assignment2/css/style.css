@@ -115,17 +115,17 @@
 }
 
 .user-img {
-    width: 40%;
+    width: 25%;
 }
 
 .user-img img {
     width: 105px;
     max-width: 100%;
-    padding-left: 40px;
+
 }
 
 .movie-review {
-    width: 60%;
+    width: 74%;
     text-align: left;
 }
 
@@ -302,5 +302,7 @@ a:link {
         height: 26px;
         padding-top: 8px;
     }
+
+    @media (min-width: 1200px) {}
 
 }
