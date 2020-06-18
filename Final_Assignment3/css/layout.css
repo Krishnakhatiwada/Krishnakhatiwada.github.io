@@ -1,0 +1,33 @@
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('../images/header-background.png');
+    position: relative;
+    background-size: cover;
+
+}
+
+.button {
+    background-color: #16a085;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    font-family: Gotham Rounded Bold;
+    font-size: 8px;
+    height: 50px;
+    color: white;
+    padding: 0px 8px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+i.fab.fa-twitter,
+i.fas.fa-basketball-ball,
+i.fab.fa-flickr {
+    font-size: 20px;
+    color: white;
+    margin: 3px;
+}
