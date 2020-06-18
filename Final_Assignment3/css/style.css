@@ -23,17 +23,18 @@ header start  */
     position: relative;
     color: white;
     text-align: center;
-    line-height: 40px;
-    margin-top: 10px;
+    line-height: 30px;
+    margin-top: 60px;
     margin-bottom: 12px;
+    font-size: 9px;
 
 }
 
 .title-content {
-    margin-left: 50px;
-    width: 69%;
+    margin-left: 83px;
+    width: 55%;
     margin-right: 15px;
-
+    font-family: Gotham;
 }
 
 .logo {
@@ -49,7 +50,7 @@ header start  */
 .started {
     width: 89px;
     height: 30px;
-    margin-bottom: 28px;
+    margin-bottom: 58px;
 }
 
 .nav-menu {
@@ -58,7 +59,7 @@ header start  */
     padding: 15px;
     color: white;
     background: black;
-    font-family: Gotham Rounded Bold;
+    font-family: Gotham;
     font-size: 13px;
     line-height: 33px;
     font-weight: bold;
@@ -66,6 +67,7 @@ header start  */
     left: 30px;
     width: 70%;
     text-align: center;
+    font-family: Gotham;
 
 
 }
@@ -189,16 +191,18 @@ header start  */
         margin-right: 384px;
         font-size: 18px;
         font-weight: bold;
+
     }
 
     p.subtitle {
         font-size: 8px;
         font-weight: normal;
-        font-family: Gotham Rounded Medium;
+
     }
 
     .started {
         margin-bottom: 215px;
+        transition: all 400ms ease-in-out;
     }
 
     /* Header End */

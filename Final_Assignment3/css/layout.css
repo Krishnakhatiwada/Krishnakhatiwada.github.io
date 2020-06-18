@@ -3,7 +3,7 @@
     margin: 0 auto;
 }
 
-header {
+.header {
     background-image: url('../images/header-background.png');
     position: relative;
     background-size: cover;
@@ -15,13 +15,20 @@ header {
     border: none;
     text-align: center;
     font-weight: bold;
-    font-family: Gotham Rounded Bold;
+    font-family: Gotham;
     font-size: 8px;
     height: 50px;
     color: white;
     padding: 0px 8px;
     border-radius: 4px;
     margin-bottom: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: black;
+    border-color: transparent;
 }
 
 i.fab.fa-twitter,
