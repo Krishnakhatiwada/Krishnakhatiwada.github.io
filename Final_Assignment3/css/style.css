@@ -15,6 +15,25 @@
 
 /* min width 480px 
 header start  */
+/* Scroll To top */
+#top {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    color: white;
+    background: black;
+    width: 50px;
+    height: 32px;
+    text-align: center;
+    padding-top: 10px;
+    opacity: 0.7;
+    z-index: 5;
+    cursor: pointer;
+    display: none;
+    border-radius: 6px;
+}
+
+/* End */
 .moble-hidden {
     display: none;
 }
@@ -37,7 +56,6 @@ button.hamburger-menu {
 
 
 .title {
-    position: relative;
     color: white;
     text-align: center;
     line-height: 30px;
@@ -73,15 +91,16 @@ button.hamburger-menu {
     padding: 15px;
     color: white;
     background: black;
-    font-family: Gotham;
     font-size: 13px;
     line-height: 33px;
     font-weight: bold;
     top: 55px;
-    left: 30px;
+    left: 47px;
     width: 70%;
     text-align: center;
-    font-family: Gotham;
+    font-family: Gotham Rounded;
+    box-shadow: 5px 10px 8px #131010;
+    border-radius: 9px;
 }
 
 .navigation-menu {
@@ -376,6 +395,7 @@ i.fab.fa-android {
         width: 95.5%;
         left: 0;
         top: 15px;
+        box-shadow: none;
     }
 
     ul.navigation-menu li {

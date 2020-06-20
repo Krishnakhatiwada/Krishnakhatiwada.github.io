@@ -16,6 +16,7 @@
   </head>
   <body>
     <div class="main">
+        <a id="top" href="#" ><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
         <div class="top-section">
             <div class="container">
       <!-- Header div start -->
@@ -30,12 +31,12 @@
                         </div>
                         <div class="ham right">
                             <button class="hamburger-menu">
-                                <a href="#" class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                                <a href="javascript:void(0);" class="hamburger"><i class="fa fa-bars" aria-hidden="true" onclick="showMenu()"></i></a>
                             </button>
                         </div>
                     </div>
            <!-- Mobile View end -->
-                    <div class="nav-menu">
+                    <div class="nav-menu" id="dropdown">
                         <ul class="navigation-menu">
                         <li class="nav-link">
                             <a href="#">HOME</a>
@@ -196,5 +197,24 @@
         </div>
     </div>
     </div>
+    <script>
+    window.onscroll = function() {ShowTop()};
+        function ShowTop(){
+            if( document.documentElement.scrollTop > 200){
+                document.getElementById('top').style.display= 'block';
+            }
+            else{
+                document.getElementById('top').style.display= 'none';
+            }
+        }
+        function showMenu(){
+            let displayProperty = document.getElementById('dropdown');
+            if(displayProperty.style.display=="inline-block"){
+                document.getElementById('dropdown').style.display='none';
+            }
+            else 
+                document.getElementById('dropdown').style.display='inline-block';
+            }
+    </script>
   </body>
 </html>
