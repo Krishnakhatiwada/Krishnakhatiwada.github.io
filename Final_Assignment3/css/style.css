@@ -19,20 +19,22 @@ header start  */
     display: none;
 }
 
-.hamburger-menu {
-    position: absolute;
-    top: 0;
-    right: 0;
+i.fa.fa-bars {
+    font-size: 35px;
+    color: white;
 }
 
-.hamburger {
-    background: url(../images/hamburger.png) no-repeat, right;
-    position: absolute;
-    top: 13px;
-    right: 15px;
-    width: 29px;
-    height: 28px;
+button.hamburger-menu {
+    border: none;
+    background: transparent;
 }
+
+.ham {
+    margin-top: 10px;
+    width: 10%;
+}
+
+
 
 .title {
     position: relative;
@@ -51,8 +53,8 @@ header start  */
 }
 
 .logo {
-    height: 50px;
-    width: 33px;
+    width: 12%;
+    padding-top: 10px;
 }
 
 .logo img {
