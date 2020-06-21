@@ -49,3 +49,7 @@ i.fab.fa-flickr {
     margin: 3px;
     transition: all 1s;
 }
+
+a:hover {
+    color: #16a085;
+}
