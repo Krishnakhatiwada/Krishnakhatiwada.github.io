@@ -183,6 +183,18 @@ button.hamburger-menu {
 
 /* Design Section End */
 /* Gallery Section Start */
+.logo-leaves {
+    position: relative;
+}
+
+.slider {
+    width: 20%;
+    position: absolute;
+    top: 167px;
+    right: 0px;
+    font-size: 19px;
+}
+
 .gallery-wrapper {
     background-color: #f5f6f7;
 }
@@ -203,6 +215,7 @@ button.hamburger-menu {
 
 .gal-logo {
     width: 100%;
+    margin-bottom: 35px;
 }
 
 .bus img {
@@ -466,6 +479,14 @@ i.fab.fa-android {
 
     /* Design Section End */
     /* Gallery Section Start */
+    .slider {
+        width: 20%;
+        position: absolute;
+        top: 161px;
+        right: 0px;
+        font-size: 25px;
+    }
+
     .bus img {
         margin-top: 12px;
     }
@@ -477,6 +498,12 @@ i.fab.fa-android {
     .gallery-leaves {
         width: 49%;
         margin-top: 154px;
+    }
+
+    .gallery-leaves img {
+        width: 100%;
+        margin-bottom: 15px;
+        margin-top: 36px;
     }
 
     .section-gallery {
@@ -714,7 +741,7 @@ i.fab.fa-android {
     .c-p {
         font-size: 12px;
         margin: 49px 0;
-        width: 95%;
+        width: 83%;
     }
 
 
@@ -722,17 +749,17 @@ i.fab.fa-android {
     .started1 {
         width: 192px;
         height: 50px;
-        margin-bottom: 80px;
+        margin-bottom: 40px;
         padding: 22px 42px 42px 18px;
         font-size: 12px;
         font-family: Gotham Rounded Bold;
     }
 
     .text-rappreset {
-        width: 20%;
+        width: 23%;
         text-align: left;
         margin-top: 114px;
-        margin-left: 128px;
+        margin-left: 113px;
         position: absolute;
     }
 
@@ -761,9 +788,18 @@ i.fab.fa-android {
     }
 
     /* Gallery Section Start */
+    .gallery-leaves img {
+        margin-top: 14px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
     .logo-leaves {
         padding: 119px 128px;
+        position: relative;
     }
+
+
 
     .gal-logo {
         padding-left: 0px;
@@ -791,6 +827,19 @@ i.fab.fa-android {
 
     .gallery-logo {
         width: 59%;
+    }
+
+    .slider1 {
+        width: 20%;
+        font-size: 25px;
+    }
+
+    .slider {
+        width: 20%;
+        position: absolute;
+        top: 105px;
+        right: 49px;
+        font-size: 25px;
     }
 
 
