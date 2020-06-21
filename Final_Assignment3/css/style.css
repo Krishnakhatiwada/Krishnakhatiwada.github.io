@@ -43,10 +43,18 @@ i.fa.fa-bars {
     color: white;
 }
 
+ul.icons li {
+    display: inline-block;
+    list-style: none;
+}
+
 button.hamburger-menu {
     border: none;
     background: transparent;
+    outline: none;
+    cursor: pointer;
 }
+
 
 .ham {
     margin-top: 10px;
