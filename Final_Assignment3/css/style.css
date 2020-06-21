@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: "Gotham Book";
     src: url("../fonts/GothamBook.ttf");
@@ -391,6 +395,27 @@ i.fab.fa-android {
 .privacy li {
     padding-bottom: 19px;
     display: inline-block;
+}
+
+ul.privacy li a {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul.privacy li a:active {
+    color: blue;
+}
+
+
+
+li.nav-link a {
+    color: white;
+    text-decoration: none;
+}
+
+li.nav-link a:active {
+    color: blue
 }
 
 /* Footer Section End */
