@@ -249,15 +249,15 @@ button.hamburger-menu {
 
 .check {
     height: 28px;
-    width: 22px;
+    width: 35px;
     margin-left: -4px;
-    margin-bottom: 0px;
     border-radius: 1px;
+    margin-bottom: 0px;
 }
 
 i.fa.fa-check {
-    margin-left: -30px;
     color: white;
+    font-size: 10px;
 }
 
 input[type="text"] {
@@ -553,19 +553,17 @@ i.fab.fa-android {
     }
 
     .check {
-        height: 59px;
-        width: 45px;
-        margin-left: -5px;
+        height: 55px;
+        width: 75px;
         border-radius: 3px;
         margin-bottom: 0px;
     }
 
     i.fa.fa-check {
-        margin-left: -51px;
+
         color: white;
-        font-size: 27px;
-        padding-bottom: 0px;
-        padding-top: 10px;
+        font-size: 16px;
+
     }
 
     /* Subscribe Section End */
@@ -581,7 +579,7 @@ i.fab.fa-android {
 
     .download-button {
         margin: 0 auto;
-        width: 43%;
+        width: 50%;
     }
 
     .download-text {
@@ -880,27 +878,30 @@ i.fab.fa-android {
         padding-bottom: 23px;
         box-sizing: border-box;
         font-size: 16px;
+        font-family: Gotham Rounded Bold;
     }
 
     .check {
         height: 65px;
         width: 65px;
-        margin-left: -5px;
-        border-radius: 0px;
+        border-radius: 3px;
     }
 
     i.fa.fa-check {
-        margin-left: -56px;
+        /* margin-left: -56px; */
         color: white;
-        font-size: 31px;
-        margin-top: 5px;
+        font-size: 30px;
+        /* margin-top: 5px; */
     }
 
     /* Subscribe Section End */
     /* Download Section Start */
-    .download-button {
-        margin: 0 auto;
-        width: 48%;
+    i.fa.fa-check {
+        /* margin-left: -56px; */
+        color: white;
+        font-size: 21px;
+        /* margin-top: 5px; */
+        height: 30px;
     }
 
     .download-text {
