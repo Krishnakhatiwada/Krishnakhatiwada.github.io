@@ -119,14 +119,6 @@ button.hamburger-menu {
     list-style: none;
 }
 
-/* .navigation-menu li {
-    list-style: none;
-    transition: transfrom .2s;
-}
-
-.navigation-menu li:hover {
-    transform: scale(1.5);
-} */
 /* header end */
 
 /* Rappresent Section */
@@ -487,7 +479,6 @@ li.nav-link a:active {
         position: absolute;
     }
 
-    /* http://www.11-76.com/themes/blackex/index-SINGLE-IMAGE-WAVE.html */
     .mobile-image {
         margin-top: 54px;
         width: 63%;
