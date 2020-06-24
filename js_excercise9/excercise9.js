@@ -1,20 +1,22 @@
 function creteWrapperDiv(circle) {
-  var speed = 3;
+  var speed = 2;
+  var new_top = 0;
   var div = document.createElement("div");
   div.setAttribute("id", "bounce-wrapper");
-  div.style.height = "400px";
+  div.style.height = "450px";
   div.style.width = "400px";
   div.style.position = "relative";
   div.style.border = "2px solid black";
   div.appendChild(circle);
-  var new_top = 0;
+
   setInterval(function () {
-    if (new_top > 350) {
-      speed = -3;
+    // console.log();
+    if (new_top > parseInt(div.style.height) - 50) {
+      speed = -2;
     }
 
     if (new_top < 0) {
-      speed = +3;
+      speed = +2;
     }
     new_top = new_top + speed;
     circle.style.top = new_top + "px";
