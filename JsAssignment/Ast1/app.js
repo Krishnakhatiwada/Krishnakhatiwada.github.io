@@ -126,11 +126,9 @@ function ImageSlider(container) {
       this.container.appendChild(div);
     });
   };
+  this.showButton();
+  this.setDot();
 }
 var container = document.querySelector(".carousel-container");
 
 var slide = new ImageSlider(container);
-
-slide.showButton();
-// slide.createDot();
-slide.setDot();
