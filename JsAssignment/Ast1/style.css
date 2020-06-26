@@ -1,0 +1,25 @@
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.carousel-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    margin: 0 500px;
+}
+
+.carousel-image-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.carousel-image-wrapper img {
+    float: left;
+    width: 400px;
+    height: 400px;
+}

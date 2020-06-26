@@ -37,8 +37,6 @@ function CreateBall(height, width, radius, top, left) {
   };
 }
 
-// console.log(ball1.getBall());
-
 function ShowElements(div, ball, ballMovement) {
   var ball = ball.getBall();
   var div = div.getDiv();
@@ -62,11 +60,11 @@ function ShowElements(div, ball, ballMovement) {
 
     if (ballMovement == verticalMovement) {
       if (new_left > parseInt(div.style.width) - 20) {
-        speed = -2;
+        speed = -3;
       }
 
       if (new_left < 0) {
-        speed = +2;
+        speed = +3;
       }
       new_left = new_left + speed;
       ball.style.left = new_left + "px";
