@@ -5,54 +5,45 @@ function ImageSlider(container) {
   var imageWidth = document.querySelector("img");
   var imageNo = document.getElementsByTagName("img");
 
-  //   function animate() {
-  //     var pos = 0;
-  //     var interval = setInterval(slide, 5);
+  var pos = 0;
+  var SPEED = 10;
 
-  //     function slide() {
-  //       if (pos == -imageWidth.width) {
-  //         clearInterval(interval);
-  //       }
-  //       if (pos < -imageWidth.width) {
-  //         pos += 35;
-  //       }
-  //       pos -= 2;
-  //       wrapper.style.left = pos + "px";
-  //     }
-  //   }
+  function animate() {
+    var animation = window.requestAnimationFrame(animate);
+
+    if (pos == -slide_index * imageWidth.width) {
+      window.cancelAnimationFrame(animation);
+    }
+    if (pos < -slide_index * imageWidth.width) {
+      pos += SPEED;
+    } else {
+      pos -= SPEED;
+    }
+    wrapper.style.left = pos + "px";
+  }
 
   this.slideRight = function () {
-    slide_index++;
-
-    if (slide_index > imageNo.length - 1) {
-      slide_index = 0;
-    }
-
-    if (slide_index > 0) {
-      wrapper.style.left = -slide_index * imageWidth.width + "px";
-    } else {
-      wrapper.style.left = slide_index * imageWidth.width + "px";
-    }
+    slide_index = (slide_index + 1) % imageNo.length;
+    animate();
   };
 
   this.slideLeft = function () {
-    slide_index--;
-    if (slide_index < -imageNo.length) {
-      slide_index = 0;
-    }
-    if (slide_index > 0) {
-      wrapper.style.left = -slide_index * imageWidth.width + "px";
+    if (slide_index === 0) {
+      slide_index = imageNo.length - 1;
     } else {
-      wrapper.style.left = slide_index * imageWidth.width + "px";
+      slide_index--;
     }
+    animate();
   };
 
   this.getElement = function () {
-    wrapper.style.width = imageNo.length * 200 + "px";
+    wrapper.style.width = imageNo.length * imageWidth.width + "px";
   };
 
   function changeImage(i) {
-    wrapper.style.left = -(i * imageWidth.width) + "px";
+    slide_index = i;
+    animate();
+    // wrapper.style.left = -(i * imageWidth.width) + "px";
   }
 
   this.prevButton = function () {
@@ -88,8 +79,8 @@ function ImageSlider(container) {
   this.showButton = function () {
     var nxtbtn = this.nextButton();
     var prevbtn = this.prevButton();
-    nxtbtn.addEventListener("click", this.slideLeft);
-    prevbtn.addEventListener("click", this.slideRight);
+    nxtbtn.addEventListener("click", this.slideRight);
+    prevbtn.addEventListener("click", this.slideLeft);
     this.container.appendChild(nxtbtn);
     this.container.appendChild(prevbtn);
   };
