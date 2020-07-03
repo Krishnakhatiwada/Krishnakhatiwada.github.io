@@ -183,8 +183,21 @@
                       </a>
                     </td>
                     <td>
-                      <a href="#" id="fbDdemo">
+                      <a href="#" id="fbDemo">
                         Flappy Bird Demo
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Helix Animation</td>
+                    <td>
+                      <a href="#" id="helixCode">
+                        Helix Animation Code
+                      </a>
+                    </td>
+                    <td>
+                      <a href="#" id="helixDemo">
+                        Helix Animation Demo
                       </a>
                     </td>
                   </tr>
@@ -257,16 +270,21 @@
           document.getElementById("carGameDemo").href =
             "https://krishnakhatiwada.github.io/JsAssignment/Ast4/";
 
-          document.getElementById("fbDemo").href =
-            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/JsAssignment/Ast5";
           document.getElementById("fbCode").href =
+            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/JsAssignment/Ast5";
+          document.getElementById("fbDemo").href =
             "https://krishnakhatiwada.github.io/JsAssignment/Ast5/";
+
+          document.getElementById("helixCode").href =
+            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/JsAssignment/Ast6";
+          document.getElementById("helixDemo").href =
+            "https://krishnakhatiwada.github.io/JsAssignment/Ast6/";
 
           document.getElementById("main").hidden = false;
           document.getElementById("loading").hidden = true;
         })
         .catch((err) => {
-          // handle errors
+          console.log(err);
         });
     </script>
   </body>
