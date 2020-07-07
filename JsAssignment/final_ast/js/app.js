@@ -20,6 +20,9 @@ class App {
     this.zombieSprite = new Image();
     this.zombieSprite.src = "./images/zombies.png";
 
+    this.roadSprite = new Image();
+    this.roadSprite.src = "./images/tile.png";
+
     this.home = new Home(this);
 
     this.draw();
@@ -27,6 +30,7 @@ class App {
   }
 
   draw() {
+    this.context.imageSmoothingEnabled = false;
     this.context.clearRect(0, 0, this.cwidth, this.cheight);
     this.context.fillStyle = "#000000";
     this.context.fillRect(0, 0, this.cwidth, this.cheight);
@@ -36,7 +40,6 @@ class App {
   gameLoop() {
     this.draw();
     this.home.update();
-
     requestAnimationFrame(this.gameLoop.bind(this));
   }
 }

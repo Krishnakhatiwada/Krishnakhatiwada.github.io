@@ -1,3 +1,5 @@
+// Internal Files
+import Road from "./road.js";
 export default class Home {
   constructor(app) {
     var self = this;
@@ -5,12 +7,14 @@ export default class Home {
     this.context = this.app.context;
     this.canvas = this.app.canvas;
     this.menuSprite = this.app.menuSprite;
-
+    this.roadSprite = this.app.roadSprite;
     this.currentState = 0;
     this.startState = 0;
     this.playState = 1;
     this.pauseState = 2;
     this.overState = 3;
+
+    this.road = new Road(this);
   }
 
   draw() {
@@ -30,14 +34,11 @@ export default class Home {
       this.overGame(); //when screen is in game over state
     }
 
+    this.road.draw();
     return;
   }
 
-  update() {
-    this.updateState();
-  }
-
-  updateState() {}
+  update() {}
 
   homeGame() {
     // zombies Tsunami
