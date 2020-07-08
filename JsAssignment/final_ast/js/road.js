@@ -4,12 +4,69 @@ export default class Road {
     this.roadSprite = this.home.roadSprite;
     this.context = this.home.context;
     this.canvas = this.home.canvas;
-
     this.row = 4;
-    this.col = 4;
-    this.cropSize = 90;
-    this.tsize = 153;
-    this.tile = [0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 0];
+    this.col = 12;
+    this.tsize = 90;
+    this.x = 5;
+    this.y = 10;
+    this.width = 630;
+    this.height = 360;
+    this.maxX = this.col * this.tsize - this.width;
+    this.maxY = this.row * this.tsize - this.height;
+    this.SPEED = 256;
+    this.tile = [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+    ];
   }
 
   getTile(col, row) {
@@ -21,32 +78,37 @@ export default class Road {
   //     this.y = 0;
   //     this.width = width;
   //     this.height = height;
-  //     this.maxX = this.cols * this.tsize - width;
-  //     this.maxY = this.rows * this.tsize - height;
+  //     this.maxX = this.col * this.tsize - width;
+  //     this.maxY = this.row * this.tsize - height;
   //     this.SPEED = 256;
   //   }
   draw() {
-    //   70 of x should be increased
-    // this.context.drawImage(this.roadSprite, 0, 0, 153, 153, 100, 210, 90, 90);
-    // this.context.drawImage(this.roadSprite, 153, 0, 153, 153, 190, 210, 90, 90);
-    // this.context.drawImage(this.roadSprite, 153, 0, 153, 153, 280, 210, 90, 90);
-    // this.context.drawImage(this.roadSprite, 155, 0, 155, 155, 330, 210, 90, 90);
-    // this.context.drawImage(this.roadSprite, 155, 0, 155, 155, 400, 210, 90, 90);
-    for (let i = 0; i < this.col; i++) {
-      for (let j = 0; j < this.row; j++) {
+    let startCol = Math.floor(this.x / this.tsize);
+    let endCol = startCol + this.width / this.tsize;
+    let startRow = Math.floor(this.y / this.tsize);
+    let endRow = startRow + this.height / this.tsize;
+    let offsetX = -this.x + startCol * this.tsize;
+    let offsetY = -this.y + startRow * this.tsize;
+
+    for (let i = startCol; i <= endCol; i++) {
+      for (let j = startRow; j <= endRow; j++) {
         let tile = this.getTile(i, j);
+        var x = (i - startCol) * this.tsize + offsetX;
+        var y = (j - startRow) * this.tsize + offsetY;
 
         if (tile !== 0) {
           this.context.drawImage(
             this.roadSprite,
-            this.tsize,
+            tile * this.tsize,
             0,
             this.tsize,
             this.tsize,
-            i * this.cropSize + 100,
-            j * this.cropSize + 30,
-            this.cropSize,
-            this.cropSize
+            // i * this.tsize,
+            // j * this.tsize,
+            Math.round(x),
+            Math.round(y),
+            this.tsize,
+            this.tsize
           );
         }
       }

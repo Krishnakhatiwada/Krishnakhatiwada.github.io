@@ -1,5 +1,6 @@
 // Internal Files
 import Road from "./road.js";
+import Zombies from "./zombies.js";
 export default class Home {
   constructor(app) {
     var self = this;
@@ -8,7 +9,8 @@ export default class Home {
     this.canvas = this.app.canvas;
     this.menuSprite = this.app.menuSprite;
     this.roadSprite = this.app.roadSprite;
-    this.currentState = 0;
+    this.zombie = new Zombies(this);
+    this.currentState = 1;
     this.startState = 0;
     this.playState = 1;
     this.pauseState = 2;
@@ -18,6 +20,7 @@ export default class Home {
   }
 
   draw() {
+    this.road.draw();
     if (this.currentState == this.startState) {
       this.homeGame(); //when screen is in home
     }
@@ -33,8 +36,7 @@ export default class Home {
     if (this.currentState == this.overState) {
       this.overGame(); //when screen is in game over state
     }
-
-    this.road.draw();
+    this.zombie.draw();
     return;
   }
 
@@ -52,7 +54,7 @@ export default class Home {
       271,
       180,
       520,
-      240,
+      300,
       70,
       50
     );
@@ -60,7 +62,7 @@ export default class Home {
     this.context.font = "16px Arial";
     this.context.fillStyle = "white";
 
-    this.context.fillText("Best Score", 10, 240);
+    this.context.fillText("Best Score", 10, 300);
     // high Score
     this.context.drawImage(
       this.menuSprite,
@@ -69,7 +71,7 @@ export default class Home {
       182,
       135,
       10,
-      250,
+      310,
       40,
       40
     );
