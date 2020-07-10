@@ -9,6 +9,9 @@ export default class Home {
     this.canvas = this.app.canvas;
     this.menuSprite = this.app.menuSprite;
     this.roadSprite = this.app.roadSprite;
+    this.zombieSprite = this.app.zombieSprite;
+    this.frame = this.app.frame;
+
     this.zombie = new Zombies(this);
     this.currentState = 1;
     this.startState = 0;
@@ -40,7 +43,9 @@ export default class Home {
     return;
   }
 
-  update() {}
+  update() {
+    this.zombie.update();
+  }
 
   homeGame() {
     // zombies Tsunami

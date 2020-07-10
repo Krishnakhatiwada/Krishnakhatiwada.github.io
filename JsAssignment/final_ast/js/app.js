@@ -18,10 +18,12 @@ class App {
     this.powerSprite.src = "./images/powers.png";
 
     this.zombieSprite = new Image();
-    this.zombieSprite.src = "./images/zombies.png";
+    this.zombieSprite.src = "./images/zombies1.png";
 
     this.roadSprite = new Image();
     this.roadSprite.src = "./images/tile.png";
+
+    this.frame = 0;
 
     this.home = new Home(this);
 
@@ -40,6 +42,7 @@ class App {
   gameLoop() {
     this.draw();
     this.home.update();
+    this.frame++;
     requestAnimationFrame(this.gameLoop.bind(this));
   }
 }
