@@ -5,15 +5,20 @@ export default class Road {
     this.context = this.home.context;
     this.canvas = this.home.canvas;
     this.row = 4;
-    this.col = 12;
+    this.col = 25;
     this.tsize = 90;
-    this.x = 5;
-    this.y = 10;
+
     this.width = 630;
     this.height = 360;
     this.maxX = this.col * this.tsize - this.width;
     this.maxY = this.row * this.tsize - this.height;
     this.SPEED = 256;
+
+    this.camera = {
+      x: 0,
+      y: 0,
+    };
+
     this.tile = [
       0,
       0,
@@ -27,6 +32,19 @@ export default class Road {
       0,
       0,
       0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
 
       0,
       0,
@@ -40,6 +58,19 @@ export default class Road {
       0,
       0,
       0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
 
       0,
       0,
@@ -51,8 +82,21 @@ export default class Road {
       1,
       1,
       1,
-      2,
-      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
 
       1,
       1,
@@ -65,7 +109,20 @@ export default class Road {
       2,
       2,
       2,
-      2,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
     ];
   }
 
@@ -73,29 +130,10 @@ export default class Road {
     return this.tile[row * this.col + col];
   }
 
-  //   camera(width, height) {
-  //     this.x = 0;
-  //     this.y = 0;
-  //     this.width = width;
-  //     this.height = height;
-  //     this.maxX = this.col * this.tsize - width;
-  //     this.maxY = this.row * this.tsize - height;
-  //     this.SPEED = 256;
-  //   }
   draw() {
-    let startCol = Math.floor(this.x / this.tsize);
-    let endCol = startCol + this.width / this.tsize;
-    let startRow = Math.floor(this.y / this.tsize);
-    let endRow = startRow + this.height / this.tsize;
-    let offsetX = -this.x + startCol * this.tsize;
-    let offsetY = -this.y + startRow * this.tsize;
-
-    for (let i = startCol; i <= endCol; i++) {
-      for (let j = startRow; j <= endRow; j++) {
+    for (let i = 0; i < this.col; i++) {
+      for (let j = 0; j < this.row; j++) {
         let tile = this.getTile(i, j);
-        var x = (i - startCol) * this.tsize + offsetX;
-        var y = (j - startRow) * this.tsize + offsetY;
-
         if (tile !== 0) {
           this.context.drawImage(
             this.roadSprite,
@@ -103,10 +141,10 @@ export default class Road {
             0,
             this.tsize,
             this.tsize,
-            // i * this.tsize,
-            // j * this.tsize,
-            Math.round(x),
-            Math.round(y),
+            i * this.tsize - this.camera.x,
+            j * this.tsize - this.camera.y,
+            // Math.round(x - this.camera.x),
+            // Math.round(y - this.camera.y),
             this.tsize,
             this.tsize
           );
