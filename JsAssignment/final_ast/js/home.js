@@ -1,6 +1,7 @@
 // Internal Files
 import Road from "./road.js";
 import Zombies from "./zombies.js";
+import Human from "./human.js";
 export default class Home {
   constructor(app) {
     var self = this;
@@ -12,14 +13,14 @@ export default class Home {
     this.zombieSprite = this.app.zombieSprite;
     this.frame = this.app.frame;
 
-    this.zombie = new Zombies(this);
     this.currentState = 1;
     this.startState = 0;
     this.playState = 1;
     this.pauseState = 2;
     this.overState = 3;
-
+    this.human = new Human(this);
     this.road = new Road(this);
+    this.zombie = new Zombies(this);
   }
 
   draw() {
@@ -40,11 +41,13 @@ export default class Home {
       this.overGame(); //when screen is in game over state
     }
     this.zombie.draw();
+    this.human.draw();
     return;
   }
 
   update() {
     this.zombie.update();
+    this.human.update();
   }
 
   homeGame() {
