@@ -1,7 +1,7 @@
 // Internal Files
 import Road from "./road.js";
 import Zombies from "./zombies.js";
-import human from "./human.js";
+import Human from "./human.js";
 export default class Home {
   constructor(app) {
     var self = this;
@@ -18,10 +18,9 @@ export default class Home {
     this.playState = 1;
     this.pauseState = 2;
     this.overState = 3;
-
+    this.human = new Human(this);
     this.road = new Road(this);
     this.zombie = new Zombies(this);
-    this.human = new Human(this);
   }
 
   draw() {

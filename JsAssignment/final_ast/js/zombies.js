@@ -1,13 +1,15 @@
 export default class Zombies {
   constructor(home) {
     this.home = home;
+
     this.zombieSprite = this.home.zombieSprite;
     this.context = this.home.context;
     this.canvas = this.home.canvas;
     this.road = this.home.road;
+    this.human = this.home.human;
     this.width = 110;
     this.height = 140;
-    this.X = 50;
+    this.X = Math.floor(Math.random() * 200);
     this.Y = 182;
     this.radius = 12;
     this.frame = 0;
@@ -16,6 +18,7 @@ export default class Zombies {
     this.speed = 0;
     this.x_velocity = 0;
     this.y_velocity = 0;
+    this.zombieNo = 1;
     this.animate = [
       { sX: 0, sY: 0 },
       { sX: 121, sY: 0 },
@@ -61,22 +64,25 @@ export default class Zombies {
         newTopY,
         newBottomY
       );
+
+      this.humanCollision();
     }
   }
   draw() {
-    let zomb = this.animate[this.frame];
-    this.context.drawImage(
-      this.zombieSprite,
-      zomb.sX,
-      zomb.sY,
-      this.width,
-      this.height,
-      this.X - this.road.camera.x,
-      this.Y - this.road.camera.y,
-      // (this.Y += this.gravity),
-      90,
-      90
-    );
+    for (let i = 0; i < this.zombieNo; i++) {
+      let zomb = this.animate[this.frame];
+      this.context.drawImage(
+        this.zombieSprite,
+        zomb.sX,
+        zomb.sY,
+        this.width,
+        this.height,
+        this.X - this.road.camera.x,
+        this.Y - this.road.camera.y,
+        90,
+        90
+      );
+    }
   }
 
   tileCollisonDetection(x, y, leftX, rightX, topY, bottomY) {
@@ -86,6 +92,13 @@ export default class Zombies {
       this.gravity = 0;
     }
     if (this.X > this.road.width - this.road.tsize) {
+    }
+  }
+
+  humanCollision() {
+    if (this.X >= this.human.x) {
+      this.zombieNo = 1 + this.human.addZombies;
+      this.human.isDisplay = false;
     }
   }
 }
