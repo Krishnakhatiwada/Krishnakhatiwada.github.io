@@ -7,6 +7,7 @@ export default class Zombies {
     this.canvas = this.home.canvas;
     this.road = this.home.road;
     this.human = this.home.human;
+    this.car = this.home.car;
     this.width = 110;
     this.height = 140;
     this.X = Math.floor(Math.random() * 200);
@@ -49,23 +50,18 @@ export default class Zombies {
         this.road.camera.x = this.X - 2 * this.road.tsize;
       }
 
-      let x = Math.floor(this.X / this.road.tsize);
-      let y = Math.floor(this.Y / this.road.tsize);
-      let newLeftX = x - 1;
-      let newRightX = x + 1;
-      let newTopY = y - 1;
-      let newBottomY = y + 1;
+      // let x = Math.floor(this.X / this.road.tsize);
+      // let y = Math.floor(this.Y / this.road.tsize);
+      // let newLeftX = x - 1;
+      // let newRightX = x + 1;
+      // let newTopY = y - 1;
+      // let newBottomY = y + 1;
 
-      this.tileCollisonDetection(
-        x,
-        y,
-        newLeftX,
-        newRightX,
-        newTopY,
-        newBottomY
-      );
+      this.tileCollisonDetection();
 
       this.humanCollision();
+      this.carCollision();
+      this.busCollision();
     }
   }
   draw() {
@@ -85,7 +81,7 @@ export default class Zombies {
     }
   }
 
-  tileCollisonDetection(x, y, leftX, rightX, topY, bottomY) {
+  tileCollisonDetection() {
     // console.log("top", topY, "bottom", bottomY);
     // console.log("left", leftX, "right", rightX);
     if (this.Y > this.road.height - this.road.tsize - 90) {
@@ -101,4 +97,8 @@ export default class Zombies {
       this.human.isDisplay = false;
     }
   }
+
+  carCollision() {}
+
+  busCollision() {}
 }

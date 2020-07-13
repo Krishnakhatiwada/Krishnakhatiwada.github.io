@@ -2,6 +2,10 @@
 import Road from "./road.js";
 import Zombies from "./zombies.js";
 import Human from "./human.js";
+import Car from "./car.js";
+import Bus from "./bus.js";
+import Tank from "./tank.js";
+
 export default class Home {
   constructor(app) {
     var self = this;
@@ -11,6 +15,7 @@ export default class Home {
     this.menuSprite = this.app.menuSprite;
     this.roadSprite = this.app.roadSprite;
     this.zombieSprite = this.app.zombieSprite;
+    this.carSprite = this.app.carSprite;
     this.frame = this.app.frame;
 
     this.currentState = 1;
@@ -18,6 +23,10 @@ export default class Home {
     this.playState = 1;
     this.pauseState = 2;
     this.overState = 3;
+
+    this.tank = new Tank(this);
+    this.bus = new Bus(this);
+    this.car = new Car(this);
     this.human = new Human(this);
     this.road = new Road(this);
     this.zombie = new Zombies(this);
@@ -42,12 +51,18 @@ export default class Home {
     }
     this.zombie.draw();
     this.human.draw();
+    this.car.draw();
+    this.bus.draw();
+    this.tank.draw();
     return;
   }
 
   update() {
     this.zombie.update();
     this.human.update();
+    this.car.update();
+    this.bus.update();
+    this.tank.update();
   }
 
   homeGame() {

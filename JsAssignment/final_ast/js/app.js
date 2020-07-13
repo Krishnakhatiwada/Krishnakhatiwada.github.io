@@ -9,7 +9,7 @@ class App {
 
     this.carSprite = new Image();
 
-    this.carSprite.src = "./images/cars.png";
+    this.carSprite.src = "./images/buses.png";
 
     this.menuSprite = new Image();
     this.menuSprite.src = "./images/menu.png";
