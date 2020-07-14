@@ -7,11 +7,6 @@ export default class Road {
     this.row = 4;
     this.col = 25;
     this.tsize = 90;
-
-    this.width = 630;
-    this.height = 360;
-    this.maxX = this.col * this.tsize - this.width;
-    this.maxY = this.row * this.tsize - this.height;
     this.SPEED = 256;
 
     this.camera = {

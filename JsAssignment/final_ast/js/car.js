@@ -3,8 +3,9 @@ export default class Car {
     this.home = home;
     this.context = this.home.context;
     this.carSprite = this.home.carSprite;
-    this.x = 600;
-    this.y = 160;
+    this.road = this.home.road;
+    this.x = 750;
+    this.y = 70;
     this.height = 106;
     this.width = 263;
     this.sX = 1;
@@ -14,7 +15,12 @@ export default class Car {
     this.requiredZombies = 4;
     this.isDisplay = true;
   }
-  update() {}
+  update() {
+    // this.x -= 5;
+    // if (this.x < 450) {
+    //   this.x = 400;
+    // }
+  }
   draw() {
     if (this.isDisplay == true) {
       this.context.drawImage(
@@ -23,8 +29,8 @@ export default class Car {
         this.sY,
         this.width,
         this.height,
-        this.x,
-        this.y,
+        this.x - this.road.camera.x,
+        this.y - this.road.camera.y,
         this.showSize,
         this.showSize
       );

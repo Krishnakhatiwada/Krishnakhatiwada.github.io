@@ -17,7 +17,7 @@ export default class Home {
     this.zombieSprite = this.app.zombieSprite;
     this.carSprite = this.app.carSprite;
     this.frame = this.app.frame;
-
+    this.road = new Road(this);
     this.currentState = 1;
     this.startState = 0;
     this.playState = 1;
@@ -27,8 +27,9 @@ export default class Home {
     this.tank = new Tank(this);
     this.bus = new Bus(this);
     this.car = new Car(this);
-    this.human = new Human(this);
-    this.road = new Road(this);
+    this.human = new Human(this, 280, 180);
+    // this.human2 = new Human(this, 1350, 180);
+
     this.zombie = new Zombies(this);
   }
 
@@ -49,8 +50,11 @@ export default class Home {
     if (this.currentState == this.overState) {
       this.overGame(); //when screen is in game over state
     }
+
     this.zombie.draw();
     this.human.draw();
+    // this.human2.draw();
+
     this.car.draw();
     this.bus.draw();
     this.tank.draw();
@@ -60,6 +64,7 @@ export default class Home {
   update() {
     this.zombie.update();
     this.human.update();
+    // this.human2.update();
     this.car.update();
     this.bus.update();
     this.tank.update();
