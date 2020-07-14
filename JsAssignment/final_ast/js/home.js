@@ -5,6 +5,7 @@ import Human from "./human.js";
 import Car from "./car.js";
 import Bus from "./bus.js";
 import Tank from "./tank.js";
+import { humanCollision, carCollision } from "./collision.js";
 
 export default class Home {
   constructor(app) {
@@ -28,9 +29,19 @@ export default class Home {
     this.bus = new Bus(this);
     this.car = new Car(this);
     this.human = new Human(this, 280, 180);
+
+    this.zombieLength = 1;
+    this.allZombies = [];
     // this.human2 = new Human(this, 1350, 180);
 
-    this.zombie = new Zombies(this);
+    this.createZombies();
+  }
+
+  createZombies() {
+    for (let i = 0; i < this.zombieLength; i++) {
+      let zombie = new Zombies(this);
+      this.allZombies.push(zombie);
+    }
   }
 
   draw() {
@@ -51,7 +62,10 @@ export default class Home {
       this.overGame(); //when screen is in game over state
     }
 
-    this.zombie.draw();
+    this.allZombies.forEach((zombies) => {
+      zombies.draw();
+    });
+
     this.human.draw();
     // this.human2.draw();
 
@@ -62,7 +76,29 @@ export default class Home {
   }
 
   update() {
-    this.zombie.update();
+    this.allZombies.forEach((zombies) => {
+      zombies.update();
+    });
+
+    if (this.human.isCollided == false) {
+      if (humanCollision(this.human, this.allZombies) == true) {
+        this.zombieLength = 1 + this.human.addZombies;
+        this.human.isDisplay = false;
+        this.human.isCollided = true;
+        this.createZombies();
+      }
+    }
+    if (this.car.isCollided == false) {
+      if (carCollision(this.car, this.allZombies)) {
+        if (this.zombieLength == this.car.requiredZombies) {
+          this.zombieLength = 4 + this.car.addZombies;
+          this.car.isDisplay = false;
+          this.car.isCollided = true;
+          this.createZombies();
+        }
+      }
+    }
+
     this.human.update();
     // this.human2.update();
     this.car.update();

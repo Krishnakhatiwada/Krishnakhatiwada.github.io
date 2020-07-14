@@ -13,6 +13,7 @@ export default class Human {
     this.showSize = 90;
     this.addZombies = 3;
     this.isDisplay = true;
+    this.isCollided = false;
   }
 
   update() {}

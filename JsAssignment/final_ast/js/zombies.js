@@ -10,7 +10,7 @@ export default class Zombies {
     this.car = this.home.car;
     this.width = 110;
     this.height = 140;
-    this.x = Math.floor(Math.random() * 200);
+    this.x = 50;
     this.y = 182;
     this.frame = 0;
     this.jump = false;
@@ -58,9 +58,9 @@ export default class Zombies {
 
       this.tileCollisonDetection();
 
-      this.humanCollision();
-      this.carCollision();
-      this.busCollision();
+      // this.humanCollision();
+      // this.carCollision();
+      // this.busCollision();
     }
   }
   draw() {
@@ -94,31 +94,19 @@ export default class Zombies {
     }
   }
 
-  humanCollision() {
-    if (
-      this.x + 90 > this.human.x &&
-      this.x < this.human.x + this.human.showSize &&
-      this.y + 90 > this.human.y &&
-      this.y < this.human.y + this.human.showSize
-    ) {
-      this.zombieNo = 1 + this.human.addZombies;
-      this.human.isDisplay = false;
-    }
-  }
-
-  carCollision() {
-    if (
-      this.x + 90 > this.car.x &&
-      this.x < this.car.x + this.car.showSize &&
-      this.y + 90 > this.car.y &&
-      this.y < this.car.y + this.car.showSize
-    ) {
-      if (this.zombieNo == this.car.requiredZombies) {
-        this.zombieNo = 4 + this.car.addZombies;
-        this.car.isDisplay = false;
-      }
-    }
-  }
+  // carCollision() {
+  //   if (
+  //     this.x + 90 > this.car.x &&
+  //     this.x < this.car.x + this.car.showSize &&
+  //     this.y + 90 > this.car.y &&
+  //     this.y < this.car.y + this.car.showSize
+  //   ) {
+  //     if (this.zombieNo == this.car.requiredZombies) {
+  //       this.zombieNo = 4 + this.car.addZombies;
+  //       this.car.isDisplay = false;
+  //     }
+  //   }
+  // }
 
   busCollision() {}
 }
