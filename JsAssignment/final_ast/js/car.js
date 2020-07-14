@@ -14,6 +14,8 @@ export default class Car {
     this.addZombies = 4;
     this.requiredZombies = 4;
     this.isDisplay = true;
+    this.isCollided = false;
+    this.isCollided = false;
   }
   update() {
     // this.x -= 5;
