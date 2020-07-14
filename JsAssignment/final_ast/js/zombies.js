@@ -10,13 +10,10 @@ export default class Zombies {
     this.car = this.home.car;
     this.width = 110;
     this.height = 140;
-    this.X = Math.floor(Math.random() * 200);
-    this.Y = 182;
-    this.radius = 12;
+    this.x = Math.floor(Math.random() * 200);
+    this.y = 182;
     this.frame = 0;
     this.jump = false;
-    this.gravity = 2;
-    this.speed = 0;
     this.x_velocity = 0;
     this.y_velocity = 0;
     this.zombieNo = 1;
@@ -37,18 +34,20 @@ export default class Zombies {
       this.frame = (this.frame + 1) % this.animate.length;
       document.addEventListener("keydown", (e) => {
         if (e.keyCode == 32) {
-          this.y_velocity -= 0;
-          this.Y = this.y_velocity;
-          this.jump = true;
+          this.jumping();
         }
       });
 
-      this.X += 2;
-      this.Y += this.gravity;
+      this.x_velocity += 2;
+      this.x = this.x_velocity;
 
-      if (this.X > this.road.camera.x + 2 * this.road.tsize) {
-        this.road.camera.x = this.X - 2 * this.road.tsize;
+      if (this.x > this.road.camera.x + 2 * this.road.tsize) {
+        this.road.camera.x = this.x - 2 * this.road.tsize;
       }
+
+      this.y_velocity += 0.5;
+      this.y += this.y_velocity;
+      this.y_velocity *= 0.9;
 
       // let x = Math.floor(this.X / this.road.tsize);
       // let y = Math.floor(this.Y / this.road.tsize);
@@ -65,40 +64,61 @@ export default class Zombies {
     }
   }
   draw() {
-    for (let i = 0; i < this.zombieNo; i++) {
-      let zomb = this.animate[this.frame];
-      this.context.drawImage(
-        this.zombieSprite,
-        zomb.sX,
-        zomb.sY,
-        this.width,
-        this.height,
-        this.X - this.road.camera.x,
-        this.Y - this.road.camera.y,
-        90,
-        90
-      );
+    let zomb = this.animate[this.frame];
+    this.context.drawImage(
+      this.zombieSprite,
+      zomb.sX,
+      zomb.sY,
+      this.width,
+      this.height,
+      this.x - this.road.camera.x,
+      this.y - this.road.camera.y,
+      90,
+      90
+    );
+  }
+  jumping() {
+    if (this.jump == false) {
+      this.jump = true;
+      this.y_velocity -= 25;
     }
   }
 
   tileCollisonDetection() {
-    // console.log("top", topY, "bottom", bottomY);
-    // console.log("left", leftX, "right", rightX);
-    if (this.Y > this.road.height - this.road.tsize - 90) {
-      this.gravity = 0;
-    }
-    if (this.X > this.road.width - this.road.tsize) {
+    let top = 3 * this.road.tsize;
+    // if (this.y > 360 - 90 - 90) {
+    if (this.y + 90 > top) {
+      this.jump = false;
+      this.y = top - 90;
+      this.y_velocity = 0;
     }
   }
 
   humanCollision() {
-    if (this.X >= this.human.x) {
+    if (
+      this.x + 90 > this.human.x &&
+      this.x < this.human.x + this.human.showSize &&
+      this.y + 90 > this.human.y &&
+      this.y < this.human.y + this.human.showSize
+    ) {
       this.zombieNo = 1 + this.human.addZombies;
       this.human.isDisplay = false;
     }
   }
 
-  carCollision() {}
+  carCollision() {
+    if (
+      this.x + 90 > this.car.x &&
+      this.x < this.car.x + this.car.showSize &&
+      this.y + 90 > this.car.y &&
+      this.y < this.car.y + this.car.showSize
+    ) {
+      if (this.zombieNo == this.car.requiredZombies) {
+        this.zombieNo = 4 + this.car.addZombies;
+        this.car.isDisplay = false;
+      }
+    }
+  }
 
   busCollision() {}
 }

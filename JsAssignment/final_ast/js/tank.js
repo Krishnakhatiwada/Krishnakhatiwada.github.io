@@ -3,7 +3,8 @@ export default class Tank {
     this.home = home;
     this.context = this.home.context;
     this.carSprite = this.home.carSprite;
-    this.x = 390;
+    this.road = this.home.road;
+    this.x = 1900;
     this.y = 120;
     this.height = 120;
     this.width = 329;
@@ -14,7 +15,9 @@ export default class Tank {
     this.requiredZombies = 8;
     this.isDisplay = true;
   }
-  update() {}
+  update() {
+    // this.x -= 0.5;
+  }
   draw() {
     if (this.isDisplay == true) {
       this.context.drawImage(
@@ -23,8 +26,8 @@ export default class Tank {
         this.sY,
         this.width,
         this.height,
-        this.x,
-        this.y,
+        this.x - this.road.camera.x,
+        this.y - this.road.camera.y,
         this.showSize,
         this.showSize
       );

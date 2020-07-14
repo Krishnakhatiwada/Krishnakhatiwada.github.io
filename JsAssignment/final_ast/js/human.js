@@ -1,10 +1,11 @@
 export default class Human {
-  constructor(home) {
+  constructor(home, x, y) {
     this.home = home;
     this.context = this.home.context;
     this.menuSprite = this.home.menuSprite;
-    this.x = 230;
-    this.y = 180;
+    this.road = this.home.road;
+    this.x = x;
+    this.y = y;
     this.height = 97;
     this.width = 141;
     this.sX = 1090;
@@ -23,8 +24,8 @@ export default class Human {
         this.sY,
         this.width,
         this.height,
-        this.x,
-        this.y,
+        this.x - this.road.camera.x,
+        this.y - this.road.camera.y,
         this.showSize,
         this.showSize
       );

@@ -3,13 +3,14 @@ export default class Bus {
     this.home = home;
     this.context = this.home.context;
     this.carSprite = this.home.carSprite;
-    this.x = 300;
-    this.y = 130;
+    this.road = this.home.road;
+    this.x = 1270;
+    this.y = 110;
     this.height = 120;
     this.width = 225;
     this.sX = 284;
     this.sY = 0;
-    this.showSize = 150;
+    this.showSize = 160;
     this.addZombies = 5;
     this.requiredZombies = 6;
     this.isDisplay = true;
@@ -23,8 +24,8 @@ export default class Bus {
         this.sY,
         this.width,
         this.height,
-        this.x,
-        this.y,
+        this.x - this.road.camera.x,
+        this.y - this.road.camera.y,
         this.showSize,
         this.showSize
       );
