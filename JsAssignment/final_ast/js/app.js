@@ -20,6 +20,9 @@ class App {
     this.zombieSprite = new Image();
     this.zombieSprite.src = "./images/zombies1.png";
 
+    this.zombiePowerSprite = new Image();
+    this.zombiePowerSprite.src = "./images/zombies.png";
+
     this.roadSprite = new Image();
     this.roadSprite.src = "./images/tile.png";
 

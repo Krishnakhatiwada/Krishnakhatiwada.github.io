@@ -1,27 +1,27 @@
-export default class Tank {
+export default class Bomb {
   constructor(home) {
     this.home = home;
     this.context = this.home.context;
-    this.carSprite = this.home.carSprite;
+    this.canvas = this.home.canvas;
+    this.zombiePowerSprite = this.home.zombiePowerSprite;
+
     this.road = this.home.road;
-    this.x = 2050;
-    this.y = 120;
-    this.height = 120;
-    this.width = 329;
-    this.sX = 525;
-    this.sY = 0;
-    this.showSize = 180;
-    this.addZombies = 6;
-    this.requiredZombies = 8;
+    this.x = 1750;
+    this.y = 180;
+    this.sX = 1785;
+    this.sY = 192;
+    this.height = 187;
+    this.width = 227;
+    this.showSize = 90;
     this.isDisplay = true;
+    this.isCollide = false;
+    this.decreaseZombies = 1;
   }
-  update() {
-    // this.x -= 0.5;
-  }
+
   draw() {
     if (this.isDisplay == true) {
       this.context.drawImage(
-        this.carSprite,
+        this.zombiePowerSprite,
         this.sX,
         this.sY,
         this.width,

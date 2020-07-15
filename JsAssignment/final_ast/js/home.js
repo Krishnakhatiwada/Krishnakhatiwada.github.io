@@ -5,7 +5,8 @@ import Human from "./human.js";
 import Car from "./car.js";
 import Bus from "./bus.js";
 import Tank from "./tank.js";
-import { humanCollision, carCollision } from "./collision.js";
+import { humanCollision, carCollision, bombCollision } from "./collision.js";
+import Bomb from "./bomb.js";
 
 export default class Home {
   constructor(app) {
@@ -16,6 +17,7 @@ export default class Home {
     this.menuSprite = this.app.menuSprite;
     this.roadSprite = this.app.roadSprite;
     this.zombieSprite = this.app.zombieSprite;
+    this.zombiePowerSprite = this.app.zombiePowerSprite;
     this.carSprite = this.app.carSprite;
     this.frame = this.app.frame;
     this.road = new Road(this);
@@ -24,6 +26,8 @@ export default class Home {
     this.playState = 1;
     this.pauseState = 2;
     this.overState = 3;
+
+    this.bomb = new Bomb(this);
 
     this.tank = new Tank(this);
     this.bus = new Bus(this);
@@ -39,7 +43,7 @@ export default class Home {
 
   createZombies() {
     for (let i = 0; i < this.zombieLength; i++) {
-      let zombie = new Zombies(this);
+      let zombie = new Zombies(this, Math.floor(Math.random() * 100));
       this.allZombies.push(zombie);
     }
   }
@@ -52,6 +56,11 @@ export default class Home {
 
     if (this.currentState == this.playState) {
       this.playGame(); //when screen is in playing state
+      this.car.draw();
+      this.bus.draw();
+      this.tank.draw();
+      this.bomb.draw();
+      this.human.draw();
     }
 
     if (this.currentState == this.pauseState) {
@@ -66,12 +75,8 @@ export default class Home {
       zombies.draw();
     });
 
-    this.human.draw();
     // this.human2.draw();
 
-    this.car.draw();
-    this.bus.draw();
-    this.tank.draw();
     return;
   }
 
@@ -96,6 +101,16 @@ export default class Home {
           this.car.isCollided = true;
           this.createZombies();
         }
+      }
+    }
+
+    if (this.bomb.isCollide == false) {
+      if (bombCollision(this.bomb, this.allZombies)) {
+        this.zombieLength = this.zombieLength - this.bomb.decreaseZombies;
+
+        this.bomb.isDisplay = false;
+        this.bomb.isCollide = true;
+        this.createZombies();
       }
     }
 
@@ -196,6 +211,10 @@ export default class Home {
       20,
       20
     );
+    this.context.font = "28px Arial";
+    this.context.fillStyle = "white";
+
+    this.context.fillText(this.zombieLength, 295, 35);
   }
 
   pauseGame() {
