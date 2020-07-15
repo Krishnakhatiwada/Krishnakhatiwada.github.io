@@ -1,5 +1,5 @@
 export default class Zombies {
-  constructor(home) {
+  constructor(home, x) {
     this.home = home;
 
     this.zombieSprite = this.home.zombieSprite;
@@ -10,7 +10,7 @@ export default class Zombies {
     this.car = this.home.car;
     this.width = 110;
     this.height = 140;
-    this.x = 50;
+    this.x = x;
     this.y = 182;
     this.frame = 0;
     this.jump = false;
@@ -57,10 +57,6 @@ export default class Zombies {
       // let newBottomY = y + 1;
 
       this.tileCollisonDetection();
-
-      // this.humanCollision();
-      // this.carCollision();
-      // this.busCollision();
     }
   }
   draw() {
@@ -86,27 +82,10 @@ export default class Zombies {
 
   tileCollisonDetection() {
     let top = 3 * this.road.tsize;
-    // if (this.y > 360 - 90 - 90) {
     if (this.y + 90 > top) {
       this.jump = false;
       this.y = top - 90;
       this.y_velocity = 0;
     }
   }
-
-  // carCollision() {
-  //   if (
-  //     this.x + 90 > this.car.x &&
-  //     this.x < this.car.x + this.car.showSize &&
-  //     this.y + 90 > this.car.y &&
-  //     this.y < this.car.y + this.car.showSize
-  //   ) {
-  //     if (this.zombieNo == this.car.requiredZombies) {
-  //       this.zombieNo = 4 + this.car.addZombies;
-  //       this.car.isDisplay = false;
-  //     }
-  //   }
-  // }
-
-  busCollision() {}
 }

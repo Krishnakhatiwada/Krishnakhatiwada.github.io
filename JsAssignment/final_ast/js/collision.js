@@ -28,3 +28,19 @@ export function carCollision(car, zombies) {
     return false;
   }
 }
+
+export function bombCollision(bomb, zombies) {
+  for (let i = 0; i < zombies.length; i++) {
+    let zomb = zombies[i];
+
+    if (
+      zomb.x + 90 > bomb.x &&
+      zomb.x < bomb.x + bomb.showSize &&
+      zomb.y + 90 > bomb.y &&
+      zomb.y < bomb.y + bomb.showSize
+    ) {
+      return true;
+    }
+    return false;
+  }
+}
