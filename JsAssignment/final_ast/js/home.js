@@ -5,12 +5,16 @@ import Human from "./human.js";
 import Car from "./car.js";
 import Bus from "./bus.js";
 import Tank from "./tank.js";
-import { humanCollision, carCollision, bombCollision } from "./collision.js";
+import {
+  humanCollision,
+  carCollision,
+  bombCollision,
+  busCollision,
+} from "./collision.js";
 import Bomb from "./bomb.js";
 
 export default class Home {
   constructor(app) {
-    var self = this;
     this.app = app;
     this.context = this.app.context;
     this.canvas = this.app.canvas;
@@ -36,6 +40,7 @@ export default class Home {
 
     this.zombieLength = 1;
     this.allZombies = [];
+    this.score = 1;
     // this.human2 = new Human(this, 1350, 180);
 
     this.createZombies();
@@ -83,36 +88,55 @@ export default class Home {
   update() {
     this.allZombies.forEach((zombies) => {
       zombies.update();
-    });
-
-    if (this.human.isCollided == false) {
-      if (humanCollision(this.human, this.allZombies) == true) {
-        this.zombieLength = 1 + this.human.addZombies;
-        this.human.isDisplay = false;
-        this.human.isCollided = true;
-        this.createZombies();
-      }
-    }
-    if (this.car.isCollided == false) {
-      if (carCollision(this.car, this.allZombies)) {
-        if (this.zombieLength == this.car.requiredZombies) {
-          this.zombieLength = 4 + this.car.addZombies;
-          this.car.isDisplay = false;
-          this.car.isCollided = true;
+      if (this.human.isCollided == false) {
+        if (humanCollision(this.human, zombies) == true) {
+          this.zombieLength = 1 + this.human.addZombies;
+          this.score = this.zombieLength;
+          this.human.isDisplay = false;
+          this.human.isCollided = true;
           this.createZombies();
         }
       }
-    }
-
-    if (this.bomb.isCollide == false) {
-      if (bombCollision(this.bomb, this.allZombies)) {
-        this.zombieLength = this.zombieLength - this.bomb.decreaseZombies;
-
-        this.bomb.isDisplay = false;
-        this.bomb.isCollide = true;
-        this.createZombies();
+      if (this.car.isCollided == false) {
+        if (carCollision(this.car, zombies)) {
+          if (this.zombieLength == this.car.requiredZombies) {
+            this.zombieLength = 4 + this.car.addZombies;
+            this.score = this.zombieLength;
+            this.car.isDisplay = false;
+            this.car.isCollided = true;
+            this.createZombies();
+          }
+        }
       }
-    }
+
+      if (this.bus.isCollided == false) {
+        if (busCollision(this.bus, zombies) == 1) {
+          this.bus.isCollided == true;
+          //left collision
+          if (this.zombieLength >= this.bus.requiredZombies) {
+            this.bus.isDisplay = false;
+            this.zombieLength = 8 + this.bus.addZombies;
+            this.score = this.zombieLength;
+          } else {
+            if (busCollision(this.bus, zombies == 0)) {
+              zombies.y = this.bus.y - this.bus.showSize;
+            } else {
+            }
+            zombies.x = this.bus.x - this.bus.showSize;
+          }
+        }
+      }
+
+      if (this.bomb.isCollided == false) {
+        if (bombCollision(this.bomb, zombies)) {
+          this.zombieLength = this.zombieLength - this.bomb.decreaseZombies;
+
+          this.bomb.isDisplay = false;
+          this.bomb.isCollided = true;
+          this.createZombies();
+        }
+      }
+    });
 
     this.human.update();
     // this.human2.update();
@@ -211,10 +235,16 @@ export default class Home {
       20,
       20
     );
+    // no of zombies
     this.context.font = "28px Arial";
     this.context.fillStyle = "white";
-
     this.context.fillText(this.zombieLength, 295, 35);
+
+    // score
+
+    this.context.font = "25px Arial";
+    this.context.fillStyle = "white";
+    this.context.fillText(this.score, 50, 35);
   }
 
   pauseGame() {

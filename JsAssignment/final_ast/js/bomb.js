@@ -14,7 +14,7 @@ export default class Bomb {
     this.width = 227;
     this.showSize = 90;
     this.isDisplay = true;
-    this.isCollide = false;
+    this.isCollided = false;
     this.decreaseZombies = 1;
   }
 

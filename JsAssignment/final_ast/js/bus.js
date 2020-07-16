@@ -14,6 +14,7 @@ export default class Bus {
     this.addZombies = 5;
     this.requiredZombies = 6;
     this.isDisplay = true;
+    this.isCollided = false;
   }
   update() {}
   draw() {
