@@ -4,16 +4,17 @@ export default class Tank {
     this.context = this.home.context;
     this.carSprite = this.home.carSprite;
     this.road = this.home.road;
-    this.x = 2050;
+    this.x = 2150;
     this.y = 120;
     this.height = 120;
     this.width = 329;
     this.sX = 525;
     this.sY = 0;
     this.showSize = 180;
-    this.addZombies = 6;
-    this.requiredZombies = 8;
+    this.addZombies = 7;
+    this.requiredZombies = 10;
     this.isDisplay = true;
+    this.isCollided = false;
   }
   update() {
     // this.x -= 0.5;

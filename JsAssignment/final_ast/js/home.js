@@ -10,8 +10,11 @@ import {
   carCollision,
   bombCollision,
   busCollision,
+  tankCollision,
+  planeCollision,
 } from "./collision.js";
 import Bomb from "./bomb.js";
+import Plane from "./plane.js";
 
 export default class Home {
   constructor(app) {
@@ -32,13 +35,14 @@ export default class Home {
     this.overState = 3;
 
     this.bomb = new Bomb(this);
-
+    this.plane = new Plane(this);
     this.tank = new Tank(this);
     this.bus = new Bus(this);
     this.car = new Car(this);
     this.human = new Human(this, 280, 180);
 
     this.zombieLength = 1;
+    this.prevZombeLength = 0;
     this.allZombies = [];
     this.score = 1;
     // this.human2 = new Human(this, 1350, 180);
@@ -47,8 +51,9 @@ export default class Home {
   }
 
   createZombies() {
-    for (let i = 0; i < this.zombieLength; i++) {
-      let zombie = new Zombies(this, Math.floor(Math.random() * 100));
+    for (let i = this.prevZombeLength; i < this.zombieLength; i++) {
+      let zombie = new Zombies(this, Math.floor(Math.random() * 50));
+      zombie.index = this.allZombies.length;
       this.allZombies.push(zombie);
     }
   }
@@ -66,6 +71,7 @@ export default class Home {
       this.tank.draw();
       this.bomb.draw();
       this.human.draw();
+      this.plane.draw();
     }
 
     if (this.currentState == this.pauseState) {
@@ -90,6 +96,7 @@ export default class Home {
       zombies.update();
       if (this.human.isCollided == false) {
         if (humanCollision(this.human, zombies) == true) {
+          this.prevZombeLength = this.zombieLength - 1;
           this.zombieLength = 1 + this.human.addZombies;
           this.score = this.zombieLength;
           this.human.isDisplay = false;
@@ -100,7 +107,8 @@ export default class Home {
       if (this.car.isCollided == false) {
         if (carCollision(this.car, zombies)) {
           if (this.zombieLength == this.car.requiredZombies) {
-            this.zombieLength = 4 + this.car.addZombies;
+            this.prevZombeLength = this.zombieLength - 1;
+            this.zombieLength = this.zombieLength + this.car.addZombies;
             this.score = this.zombieLength;
             this.car.isDisplay = false;
             this.car.isCollided = true;
@@ -111,11 +119,12 @@ export default class Home {
 
       if (this.bus.isCollided == false) {
         if (busCollision(this.bus, zombies) == 1) {
-          this.bus.isCollided == true;
+          this.bus.isCollided = true;
           //left collision
           if (this.zombieLength >= this.bus.requiredZombies) {
             this.bus.isDisplay = false;
-            this.zombieLength = 8 + this.bus.addZombies;
+            this.prevZombeLength = this.zombieLength - 1;
+            this.zombieLength = this.zombieLength + this.bus.addZombies;
             this.score = this.zombieLength;
           } else {
             if (busCollision(this.bus, zombies == 0)) {
@@ -129,11 +138,50 @@ export default class Home {
 
       if (this.bomb.isCollided == false) {
         if (bombCollision(this.bomb, zombies)) {
+          delete this.allZombies[zombies.index];
           this.zombieLength = this.zombieLength - this.bomb.decreaseZombies;
-
+          this.prevZombeLength = this.zombieLength - 1;
           this.bomb.isDisplay = false;
           this.bomb.isCollided = true;
           this.createZombies();
+        }
+      }
+
+      if (this.tank.isCollided == false) {
+        if (tankCollision(this.tank, zombies) == 1) {
+          this.tank.isCollided = true;
+          //left collision
+          if (this.zombieLength >= this.tank.requiredZombies) {
+            this.tank.isDisplay = false;
+            this.prevZombeLength = this.zombieLength - 1;
+            this.zombieLength = this.zombieLength + this.tank.addZombies;
+            this.score = this.zombieLength + 1;
+          } else {
+            if (tankCollision(this.bus, zombies == 0)) {
+              zombies.y = this.tank.y - this.tank.showSize;
+            } else {
+            }
+            zombies.x = this.tank.x - this.tank.showSize;
+          }
+        }
+      }
+
+      if (this.plane.isCollided == false) {
+        if (planeCollision(this.plane, zombies) == 1) {
+          this.plane.isCollided = true;
+          //left collision
+          if (this.zombieLength >= this.plane.requiredZombies) {
+            this.plane.isDisplay = false;
+            this.prevZombeLength = this.zombieLength - 1;
+            this.zombieLength = this.zombieLength + this.plane.addZombies;
+            this.score = this.zombieLength + 1;
+          } else {
+            if (tankCollision(this.bus, zombies == 0)) {
+              zombies.y = this.plane.y - this.plane.showSize;
+            } else {
+            }
+            zombies.x = this.plane.x - this.plane.showSize;
+          }
         }
       }
     });
@@ -142,7 +190,7 @@ export default class Home {
     // this.human2.update();
     this.car.update();
     this.bus.update();
-    this.tank.update();
+    // this.tank.update();
   }
 
   homeGame() {
@@ -241,7 +289,6 @@ export default class Home {
     this.context.fillText(this.zombieLength, 295, 35);
 
     // score
-
     this.context.font = "25px Arial";
     this.context.fillStyle = "white";
     this.context.fillText(this.score, 50, 35);

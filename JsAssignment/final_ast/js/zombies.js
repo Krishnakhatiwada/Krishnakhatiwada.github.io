@@ -16,6 +16,7 @@ export default class Zombies {
     this.jump = false;
     this.x_velocity = 0;
     this.y_velocity = 0;
+    this.gravity = 0.5;
     this.zombieNo = 1;
     this.animate = [
       { sX: 0, sY: 0 },
@@ -39,18 +40,22 @@ export default class Zombies {
       });
 
       this.x_velocity += 2;
-      this.x = this.x_velocity;
+      if (this.x_velocity > 2) {
+        this.x_velocity = 2;
+      }
+
+      this.x += this.x_velocity;
 
       if (this.x > this.road.camera.x + 2 * this.road.tsize) {
         this.road.camera.x = this.x - 2 * this.road.tsize;
       }
 
-      this.y_velocity += 0.5;
+      // this.y_velocity += 0.5;
       this.y += this.y_velocity;
-      this.y_velocity *= 0.9;
+      // console.log("y", this.y_velocity);
+      // console.log("gravity", this.gravity);
+      this.y_velocity += this.gravity;
 
-      // let x = Math.floor(this.X / this.road.tsize);
-      // let y = Math.floor(this.Y / this.road.tsize);
       // let newLeftX = x - 1;
       // let newRightX = x + 1;
       // let newTopY = y - 1;
@@ -76,16 +81,52 @@ export default class Zombies {
   jumping() {
     if (this.jump == false) {
       this.jump = true;
-      this.y_velocity -= 25;
+      this.y_velocity = -10;
     }
   }
 
   tileCollisonDetection() {
-    let top = 3 * this.road.tsize;
-    if (this.y + 90 > top) {
+    let x = Math.floor(this.x / this.road.tsize);
+    let y = Math.floor(this.y / this.road.tsize);
+    let h = 2;
+    let w = 2;
+
+    for (let i = 0; i < h; i++) {
+      for (let j = 0; j < w; j++) {
+        this.isCollideWith(x + i, y + j);
+      }
+    }
+  }
+
+  isCollideWith(tileX, tileY) {
+    let x = tileX * this.road.tsize;
+    let y = tileY * this.road.tsize;
+
+    if (tileX < 0 || tileY < 0) return;
+    let tile = this.road.getTile(tileX, tileY);
+
+    if (tile == 0) return;
+
+    if (this.y + 90 >= this.canvas.height) {
+      this.y += 90;
+      delete this.home.allZombies[this.index];
+      this.home.zombieLength--;
+
+      if (this.home.zombieLength <= 0) {
+        this.home.currentState = this.home.overState;
+      }
+    }
+    if (this.y + 90 > y - this.road.tsize && this.y < y + this.road.tsize) {
+      // this.y = y;
+
       this.jump = false;
-      this.y = top - 90;
+      this.y = y - this.road.tsize;
       this.y_velocity = 0;
     }
+
+    // if (this.x < x + 90 && this.x + 90 > x) {
+    //   this.x = this.x - this.road.x;
+    //   this.x_velocity = 0;
+    // }
   }
 }

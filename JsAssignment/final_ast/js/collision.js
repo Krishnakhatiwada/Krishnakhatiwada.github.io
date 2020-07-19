@@ -12,6 +12,7 @@ export function humanCollision(human, zomb) {
 
 export function carCollision(car, zomb) {
   if (
+    //yo overlap wala haena
     zomb.x + 90 > car.x &&
     zomb.x < car.x + car.showSize &&
     zomb.y + 90 > car.y &&
@@ -44,4 +45,30 @@ export function bombCollision(bomb, zomb) {
     return true;
   }
   return false;
+}
+
+export function tankCollision(tank, zomb) {
+  // console.log(zomb);
+  if (zomb.x + 90 > tank.x && zomb.x < tank.x + tank.showSize) {
+    // console.log("left");
+    return 1; //left collision
+  }
+
+  if (zomb.y + 90 > tank.y && zomb.y < tank.y + tank.showSize) {
+    // console.log("top");
+    return 0; //top collision
+  }
+}
+
+export function planeCollision(plane, zomb) {
+  // console.log(zomb);
+  if (zomb.x + 90 > plane.x && zomb.x < plane.x + plane.showSize) {
+    // console.log("left");
+    return 1; //left collision
+  }
+
+  if (zomb.y + 90 > plane.y && zomb.y < plane.y + plane.showSize) {
+    // console.log("top");
+    return 0; //top collision
+  }
 }

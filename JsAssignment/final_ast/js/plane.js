@@ -1,22 +1,24 @@
-export default class Bus {
+export default class Plane {
   constructor(home) {
     this.home = home;
     this.context = this.home.context;
     this.carSprite = this.home.carSprite;
     this.road = this.home.road;
-    this.x = 1270;
-    this.y = 112;
-    this.height = 120;
-    this.width = 225;
-    this.sX = 284;
-    this.sY = 0;
-    this.showSize = 160;
-    this.addZombies = 5;
-    this.requiredZombies = 6;
+    this.x = 2800;
+    this.y = 100;
+    this.height = 175;
+    this.width = 320;
+    this.sX = 0;
+    this.sY = 155;
+    this.showSize = 250;
+    this.addZombies = 9;
+    this.requiredZombies = 10;
     this.isDisplay = true;
     this.isCollided = false;
   }
-  update() {}
+  update() {
+    // this.x -= 0.5;
+  }
   draw() {
     if (this.isDisplay == true) {
       this.context.drawImage(
