@@ -3,307 +3,899 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>InternShip</title>
-
+    <title>Krishna Khatiwada | Cloud & DevOps Engineer Portfolio</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     />
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/custom.css" />
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #3b82f6;
+        --dark-color: #1e293b;
+        --light-color: #f8fafc;
+        --accent-color: #0ea5e9;
+      }
+      
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.6;
+        color: #334155;
+        background-color: var(--light-color);
+      }
+      
+      .navbar {
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+      }
+      
+      .navbar-brand {
+        font-weight: 700;
+        color: var(--dark-color) !important;
+        font-size: 1.5rem;
+      }
+      
+      .nav-link {
+        font-weight: 500;
+        color: var(--dark-color) !important;
+        margin: 0 10px;
+      }
+      
+      .nav-link:hover {
+        color: var(--primary-color) !important;
+      }
+      
+      .hero-section {
+        background: linear-gradient(135deg, #1e3a8a 0%, var(--primary-color) 100%);
+        color: white;
+        padding: 120px 0 80px;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        margin-bottom: 40px;
+      }
+      
+      .profile-img {
+        width: 220px;
+        height: 220px;
+        border: 6px solid rgba(255,255,255,0.2);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        transition: transform 0.3s ease;
+      }
+      
+      .profile-img:hover {
+        transform: scale(1.05);
+      }
+      
+      .contact-info {
+        background: rgba(255,255,255,0.1);
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 30px;
+        backdrop-filter: blur(10px);
+      }
+      
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+      }
+      
+      .contact-item i {
+        width: 24px;
+        color: var(--accent-color);
+        margin-right: 10px;
+      }
+      
+      .section-title {
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 40px;
+        color: var(--dark-color);
+        font-weight: 700;
+      }
+      
+      .section-title:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+        border-radius: 2px;
+      }
+      
+      .section-title.center:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .card-hover {
+        transition: all 0.3s ease;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        overflow: hidden;
+        height: 100%;
+        background: white;
+      }
+      
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        border-color: var(--primary-color);
+      }
+      
+      .skill-category {
+        margin-bottom: 30px;
+      }
+      
+      .skill-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        margin: 5px;
+        font-weight: 500;
+      }
+      
+      .skill-badge.secondary {
+        background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+      }
+      
+      .skill-badge.light {
+        background: linear-gradient(135deg, #64748b, #94a3b8);
+      }
+      
+      .timeline {
+        position: relative;
+        padding-left: 30px;
+      }
+      
+      .timeline:before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--primary-color);
+      }
+      
+      .timeline-item {
+        position: relative;
+        margin-bottom: 30px;
+      }
+      
+      .timeline-item:before {
+        content: '';
+        position: absolute;
+        left: -30px;
+        top: 5px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        border: 3px solid white;
+        box-shadow: 0 0 0 3px var(--primary-color);
+      }
+      
+      .timeline-date {
+        color: var(--primary-color);
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+      }
+      
+      .project-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        height: 100%;
+        border: 1px solid #e2e8f0;
+      }
+      
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      }
+      
+      .project-header {
+        padding: 25px 25px 0;
+      }
+      
+      .project-body {
+        padding: 20px 25px;
+      }
+      
+      .project-tech {
+        margin-top: 15px;
+      }
+      
+      .project-tech .badge {
+        background: #f1f5f9;
+        color: #475569;
+        font-weight: 500;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        padding: 6px 12px;
+      }
+      
+      .btn-primary-custom {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        border: none;
+        color: white;
+        padding: 10px 25px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-primary-custom:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        color: white;
+      }
+      
+      .btn-outline-custom {
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        padding: 10px 25px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-outline-custom:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+      }
+      
+      .education-card {
+        background: white;
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        border-left: 4px solid var(--primary-color);
+      }
+      
+      .gpa-badge {
+        background: linear-gradient(135deg, #10b981, #34d399);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-left: 10px;
+      }
+      
+      footer {
+        background: var(--dark-color);
+        color: white;
+        padding: 60px 0 30px;
+        margin-top: 80px;
+      }
+      
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        color: white;
+        font-size: 1.2rem;
+        margin-right: 15px;
+        transition: all 0.3s ease;
+      }
+      
+      .social-links a:hover {
+        background: var(--primary-color);
+        transform: translateY(-3px);
+      }
+      
+      .featured-badge {
+        background: linear-gradient(135deg, #f59e0b, #fbbf24);
+        color: white;
+        padding: 6px 15px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+      
+      .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+      
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #e2e8f0;
+        border-top: 5px solid var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 80px 0 60px;
+          text-align: center;
+        }
+        
+        .profile-img {
+          width: 180px;
+          height: 180px;
+          margin: 0 auto;
+        }
+        
+        .contact-info {
+          text-align: left;
+        }
+        
+        .section-title {
+          text-align: center;
+        }
+        
+        .section-title:after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
-      <div class="spinner-border" id="loading"></div>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+    </div>
 
-      <div class="row" id="main" hidden>
-        <div class="col-md-4" id="profile">
-          <img
-            class="rounded-circle img-fluid"
-            id="profilepic"
-            alt="profile Image"
-            title="profile picture"
-          />
-
-          <h2 id="name"></h2>
-          <span>
-            <b>Roll: 20</b>
-            <br />
-            <p>Group E</p>
-          </span>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">KRISHNA KHATIWADA</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn-primary-custom ml-2" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
-        <div class="col-md-8" id="repo">
-          <div class="row">
-            <div class="col-md-12" id="table">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Title</th>
-                    <th>Code</th>
-                    <th>Demo</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>GitHub Assignment</td>
-                    <td><a href="#" id="code">GitHub Code</a></td>
-                    <td><a href="#" id="demo">GitHub Demo</a></td>
-                  </tr>
-                  <tr>
-                    <td>Home Search</td>
-                    <td>
-                      <a href="#" id="assignment1code"> Home Search Code</a>
-                    </td>
-                    <td>
-                      <a href="#" id="assignment1demo"> Home Search Demo</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Home Search Responsive</td>
-                    <td>
-                      <a href="#" id="assignment2code">
-                        Home Search Responsive Code</a
-                      >
-                    </td>
-                    <td>
-                      <a href="#" id="assignment2demo">
-                        Home Search Responsive Demo</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Final Design Assignment</td>
-                    <td>
-                      <a href="#" id="assignment3code">
-                        Final Design Assignment
-                      </a>
-                    </td>
-                    <td>
-                      <a href="#" id="assignment3demo">
-                        Final Design Assignment
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Excercise 2-7</td>
-                    <td>
-                      <a href="#" id="excercie2-7code">
-                        Excercise 2-7 Code
-                      </a>
-                    </td>
-                    <td>
-                      <a href="#" id="excercie2-7demo">
-                        Excercise 2-7 Demo
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Excercise 8</td>
-                    <td>
-                      <a href="#" id="excercie8code">
-                        Excercise 8 Code
-                      </a>
-                    </td>
-                    <td>
-                      <a href="#" id="excercie8demo">
-                        Excercise 8 Demo
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Excercise 9</td>
-                    <td>
-                      <a href="#" id="excercie9code">
-                        Excercise 9 Code
-                      </a>
-                    </td>
-                    <td>
-                      <a href="#" id="excercie9demo">
-                        Excercise 9 Demo
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Image Slider</td>
-                    <td>
-                      <a href="#" id="slidercode">
-                        Image Slider Code
-                      </a>
-                    </td>
-                    <td>
-                      <a href="#" id="sliderdemo">
-                        Image Slider Demo
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Image Slider Responsive</td>
-                    <td>
-                      <a href="#" id="slidercoderes">
-                        Image Slider Responsive Code
-                      </a>
-                    </td>
-                    <td>
-                      <a href="#" id="sliderdemores">
-                        Image Slider Responsive Demo
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Ball Collision And Ant Smasher</td>
-                    <td>
-                      <a href="#" id="colideCode">
-                        Ball Collision And Ant Smasher Code
-                      </a>
-                    </td>
-                    <td>
-                      <a href="#" id="colideDemo">
-                        Ball Collision And Ant Smasher Demo
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Car Lane Game</td>
-                    <td>
-                      <a href="#" id="carGameCode">
-                        Car Game Code
-                      </a>
-                    </td>
-                    <td>
-                      <a href="#" id="carGameDemo">
-                        Car Game Demo
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Flappy Bird</td>
-                    <td>
-                      <a href="#" id="fbCode">
-                        Flappy Bird Code
-                      </a>
-                    </td>
-                    <td>
-                      <a href="#" id="fbDemo">
-                        Flappy Bird Demo
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Helix Animation</td>
-                    <td>
-                      <a href="#" id="helixCode">
-                        Helix Animation Code
-                      </a>
-                    </td>
-                    <td>
-                      <a href="#" id="helixDemo">
-                        Helix Animation Demo
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Zombies Tsunami</td>
-                    <td>
-                      <a href="#" id="zombieCode">
-                        Zombies Tsunami Code
-                      </a>
-                    </td>
-                    <td>
-                      <a href="#" id="zombieDemo">
-                        Zombies Tsunami Demo
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="main" style="display: none;">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+              <img 
+                class="rounded-circle profile-img" 
+                id="profilepic" 
+                alt="Krishna Khatiwada"
+              />
+            </div>
+            <div class="col-lg-8">
+              <h1 class="display-4 font-weight-bold mb-3">KRISHNA KHATIWADA</h1>
+              <h3 class="mb-4" style="color: #cbd5e1;">Cloud & DevOps Engineer | Cybersecurity Specialist</h3>
+              <p class="lead mb-4">
+                IT Support / Technical Analyst with 3+ years of experience providing Level 1 support, troubleshooting Windows environments, and developing cloud-native applications. Passionate about building scalable infrastructure and secure systems.
+              </p>
+              
+              <div class="contact-info">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="contact-item">
+                      <i class="fas fa-phone"></i>
+                      <span>+1 437-607-3544</span>
+                    </div>
+                    <div class="contact-item">
+                      <i class="fas fa-envelope"></i>
+                      <span>krishna123khati@gmail.com</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="contact-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <span>Toronto, Ontario</span>
+                    </div>
+                    <div class="contact-item">
+                      <i class="fab fa-linkedin"></i>
+                      <span>linkedin.com/in/krishna-khatiwada-aa9561137</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+
+      <div class="container" style="padding-top: 20px;">
+        <!-- Skills Section -->
+        <section id="skills" class="mb-5">
+          <h2 class="section-title center">Technical Skills & Certifications</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="skill-category">
+                <h5 class="font-weight-bold mb-3">Programming & Data Tools</h5>
+                <div>
+                  <span class="skill-badge">Python</span>
+                  <span class="skill-badge">SQL (MySQL, Postgres)</span>
+                  <span class="skill-badge">MongoDB</span>
+                  <span class="skill-badge">PHP</span>
+                  <span class="skill-badge">JavaScript</span>
+                </div>
+              </div>
+              
+              <div class="skill-category">
+                <h5 class="font-weight-bold mb-3">Cloud & DevOps</h5>
+                <div>
+                  <span class="skill-badge secondary">AWS</span>
+                  <span class="skill-badge secondary">Azure</span>
+                  <span class="skill-badge secondary">Kubernetes</span>
+                  <span class="skill-badge secondary">Docker</span>
+                  <span class="skill-badge secondary">Ansible</span>
+                  <span class="skill-badge secondary">Terraform</span>
+                  <span class="skill-badge secondary">GitHub Actions</span>
+                  <span class="skill-badge secondary">CI/CD Pipelines</span>
+                  <span class="skill-badge secondary">Networking</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="skill-category">
+                <h5 class="font-weight-bold mb-3">Web Development</h5>
+                <div>
+                  <span class="skill-badge light">Django</span>
+                  <span class="skill-badge light">Laravel</span>
+                  <span class="skill-badge light">HTML/CSS</span>
+                  <span class="skill-badge light">JavaScript</span>
+                  <span class="skill-badge light">REST API</span>
+                </div>
+              </div>
+              
+              <div class="skill-category">
+                <h5 class="font-weight-bold mb-3">Operating Systems & Tools</h5>
+                <div>
+                  <span class="skill-badge">Windows</span>
+                  <span class="skill-badge">Linux</span>
+                  <span class="skill-badge">Mac OS</span>
+                  <span class="skill-badge">Windows Server</span>
+                  <span class="skill-badge">Network Troubleshooting</span>
+                </div>
+              </div>
+              
+              <div class="skill-category">
+                <h5 class="font-weight-bold mb-3">Certifications & Languages</h5>
+                <div>
+                  <span class="skill-badge secondary">CPR/AED Certified</span>
+                  <span class="skill-badge">English (Fluent)</span>
+                  <span class="skill-badge">Nepali (Excellent)</span>
+                  <span class="skill-badge">Hindi (Fluent)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="mb-5">
+          <h2 class="section-title center">Professional Experience</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="card-hover">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                      <h5 class="font-weight-bold">Guest Environment Expert</h5>
+                      <h6 class="text-primary mb-2">Delta Marriott, Toronto, Canada</h6>
+                    </div>
+                    <span class="timeline-date">Sep 2024 – Present</span>
+                  </div>
+                  <ul class="pl-3 mt-3">
+                    <li>Developed strong organizational, multitasking, and problem-solving skills in a fast-paced environment</li>
+                    <li>Collaborated with cross-functional teams to ensure operational efficiency and attention to detail</li>
+                    <li>Strengthened communication and presentation abilities while addressing guest needs effectively</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="card-hover">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                      <h5 class="font-weight-bold">IT Administrator</h5>
+                      <h6 class="text-primary mb-2">Manaslu World School, Kathmandu, Nepal</h6>
+                    </div>
+                    <span class="timeline-date">Jul 2020 – Apr 2024</span>
+                  </div>
+                  <ul class="pl-3 mt-3">
+                    <li>Provided Level 1 technical support via phone and email for staff and students</li>
+                    <li>Troubleshot Windows OS, browsers, printers, and network connectivity issues</li>
+                    <li>Diagnosed and resolved incidents, escalating when required</li>
+                    <li>Supported end users with software configuration and access issues</li>
+                    <li>Maintained high customer satisfaction and timely issue resolution</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="card-hover">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                      <h5 class="font-weight-bold">Web Developer</h5>
+                      <h6 class="text-primary mb-2">Weblink Nepal, Kathmandu, Nepal</h6>
+                    </div>
+                    <span class="timeline-date">Jan 2019 – May 2020</span>
+                  </div>
+                  <ul class="pl-3 mt-3">
+                    <li>Designed and developed data-driven web applications using Laravel, PHP, MySQL, and JavaScript</li>
+                    <li>Optimized backend processes and database queries, reducing server response times by 20%</li>
+                    <li>Built responsive dashboards and UI features, enhancing user interaction and engagement</li>
+                    <li>Collaborated with teams to streamline development, reducing deployment time by 15%</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-5">
+          <h2 class="section-title center">Technical Projects</h2>
+          <div class="row">
+            <!-- DevOps Project -->
+            <div class="col-lg-6 mb-4">
+              <div class="project-card">
+                <div class="project-header">
+                  <span class="featured-badge">DevOps</span>
+                  <h4 class="font-weight-bold">CI/CD Pipeline with Kubernetes</h4>
+                </div>
+                <div class="project-body">
+                  <p class="text-muted">
+                    Built a web application with full DevOps pipeline using GitHub CI/CD to automate tasks, Terraform for infrastructure automation, and Docker/Kubernetes for microservices deployment.
+                  </p>
+                  <div class="project-tech">
+                    <span class="badge">Azure</span>
+                    <span class="badge">Docker</span>
+                    <span class="badge">Kubernetes</span>
+                    <span class="badge">CI/CD</span>
+                    <span class="badge">Terraform</span>
+                    <span class="badge">GitHub</span>
+                    <span class="badge">Node.js</span>
+                    <span class="badge">API</span>
+                    <span class="badge">SQL Database</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- ELK Stack Project -->
+            <div class="col-lg-6 mb-4">
+              <div class="project-card">
+                <div class="project-header">
+                  <span class="featured-badge" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">Cybersecurity</span>
+                  <h4 class="font-weight-bold">ELK Stack Security Monitoring</h4>
+                </div>
+                <div class="project-body">
+                  <p class="text-muted">
+                    Built a Kibana dashboard for real-time event analysis of Windows machines and IoT devices. Monitored security events and attacks using Elasticsearch, Logstash, and Winlogbeat.
+                  </p>
+                  <div class="project-tech">
+                    <span class="badge">Azure</span>
+                    <span class="badge">Elasticsearch</span>
+                    <span class="badge">Kibana</span>
+                    <span class="badge">Logstash</span>
+                    <span class="badge">Winlogbeat</span>
+                    <span class="badge">Filebeat</span>
+                    <span class="badge">Kali Linux</span>
+                    <span class="badge">IoT Security</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Online School Platform -->
+            <div class="col-lg-6 mb-4">
+              <div class="project-card">
+                <div class="project-header">
+                  <h4 class="font-weight-bold">Online School Platform</h4>
+                </div>
+                <div class="project-body">
+                  <p class="text-muted">
+                    Developed a comprehensive platform for managing courses, students, and staff with integrated database and user-facing interface using Django framework.
+                  </p>
+                  <div class="project-tech">
+                    <span class="badge">Python</span>
+                    <span class="badge">Django</span>
+                    <span class="badge">MySQL</span>
+                    <span class="badge">HTML</span>
+                    <span class="badge">CSS</span>
+                    <span class="badge">Bootstrap</span>
+                    <span class="badge">JavaScript</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Auction System -->
+            <div class="col-lg-6 mb-4">
+              <div class="project-card">
+                <div class="project-header">
+                  <h4 class="font-weight-bold">Auction System</h4>
+                </div>
+                <div class="project-body">
+                  <p class="text-muted">
+                    Built a web-based auction platform with real-time data updates, improving data flow and reporting capabilities using Laravel and modern web technologies.
+                  </p>
+                  <div class="project-tech">
+                    <span class="badge">PHP</span>
+                    <span class="badge">Laravel</span>
+                    <span class="badge">MySQL</span>
+                    <span class="badge">JavaScript</span>
+                    <span class="badge">Bootstrap</span>
+                    <span class="badge">Real-time Updates</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Web Development Projects -->
+            <div class="col-lg-12 mb-4">
+              <div class="project-card">
+                <div class="project-header">
+                  <h4 class="font-weight-bold">Final Design Assignment</h4>
+                </div>
+                <div class="project-body">
+                  <p class="text-muted">
+                    A comprehensive web design project showcasing responsive design principles, modern UI components, and interactive elements.
+                  </p>
+                  <div class="project-tech">
+                    <span class="badge">HTML5</span>
+                    <span class="badge">CSS3</span>
+                    <span class="badge">JavaScript</span>
+                    <span class="badge">Bootstrap</span>
+                    <span class="badge">Responsive Design</span>
+                  </div>
+                  <div class="mt-3">
+                    <a href="#" id="assignment3demo" class="btn-primary-custom mr-2">
+                      <i class="fas fa-external-link-alt mr-1"></i> Live Demo
+                    </a>
+                    <a href="#" id="assignment3code" class="btn-outline-custom">
+                      <i class="fab fa-github mr-1"></i> View Code
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="mb-5">
+          <h2 class="section-title center">Education</h2>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="education-card">
+                <h5 class="font-weight-bold">Seneca Polytechnic</h5>
+                <p class="text-primary mb-2">Ontario College Graduate Certificate</p>
+                <p class="mb-2"><strong>Cyber Security & Threat Management</strong> <span class="gpa-badge">GPA 4.0</span></p>
+                <p class="text-muted mb-2">May 2025 – Present</p>
+                <p class="mb-0"><strong>Cloud Architecture & Administration</strong> <span class="gpa-badge">GPA 4.0</span></p>
+                <p class="text-muted mb-0">May 2024 – Apr 2025</p>
+              </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+              <div class="education-card">
+                <h5 class="font-weight-bold">NAMI College (BIT)</h5>
+                <p class="text-primary mb-2">Software Engineering</p>
+                <p><strong>Bachelor's Degree</strong> <span class="gpa-badge">GPA 2.9</span></p>
+                <p class="text-muted mb-0">Mar 2016 – Jul 2019</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mb-5">
+          <h2 class="section-title center">Get In Touch</h2>
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+              <p class="lead mb-4">I'm currently looking for new opportunities in Cloud Engineering, DevOps, or Cybersecurity roles. Let's connect!</p>
+              <div class="d-flex flex-wrap justify-content-center mb-4">
+                <a href="mailto:krishna123khati@gmail.com" class="btn-primary-custom mr-3 mb-3">
+                  <i class="fas fa-envelope mr-2"></i> Email Me
+                </a>
+                <a href="tel:+14376073544" class="btn-outline-custom mr-3 mb-3">
+                  <i class="fas fa-phone mr-2"></i> Call Me
+                </a>
+                <a href="#" class="btn-outline-custom mb-3">
+                  <i class="fas fa-file-download mr-2"></i> Download CV
+                </a>
+              </div>
+              <div class="social-links mb-4">
+                <a href="https://www.linkedin.com/in/krishna-khatiwada-aa9561137" target="_blank" title="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/Krishnakhatiwada" target="_blank" title="GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" title="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" title="Portfolio">
+                  <i class="fas fa-globe"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
+
+      <!-- Footer -->
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+              <h4 class="mb-3">KRISHNA KHATIWADA</h4>
+              <p class="mb-4" style="color: #cbd5e1;">Cloud & DevOps Engineer | Cybersecurity Specialist | Full Stack Developer</p>
+              <p class="mb-0">&copy; <span id="currentYear"></span> Krishna Khatiwada. All rights reserved.</p>
+              <p class="mt-3">
+                <a href="#top" class="btn btn-outline-light btn-sm">
+                  <i class="fas fa-arrow-up mr-1"></i> Back to Top
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script>
+      // Fetch GitHub data
       fetch("https://api.github.com/users/Krishnakhatiwada")
         .then((response) => response.json())
         .then(function (data) {
-          let no_of_follower = data.followers;
-          let textfollower = `Followed By ${no_of_follower}  people on github`;
-
+          // Set profile information
           document.getElementById("profilepic").src = data.avatar_url;
-          document.getElementById("name").textContent = data.name;
-          document.getElementById("demo").href =
-            "https://krishnakhatiwada.github.io/";
-          document.getElementById("code").href =
-            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io";
-          document.getElementById("assignment1code").href =
-            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/Assignment1";
-          document.getElementById("assignment1demo").href =
-            "https://krishnakhatiwada.github.io/Assignment1/";
-          document.getElementById("assignment2code").href =
-            "https://krishnakhatiwada.github.io/Assignment1/";
-          document.getElementById("assignment2demo").href =
-            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/Assignment2";
-          document.getElementById("assignment3code").href =
-            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/Final_Assignment3";
-          document.getElementById("assignment3demo").href =
-            "https://krishnakhatiwada.github.io/Final_Assignment3/";
+          
+          // Set project links
+          document.getElementById("assignment3code").href = "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/Final_Assignment3";
+          document.getElementById("assignment3demo").href = "https://krishnakhatiwada.github.io/Final_Assignment3/";
 
-          document.getElementById("excercie2-7code").href =
-            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/jsexcercise/js_excercise_2-7";
-          document.getElementById("excercie2-7demo").href =
-            "https://krishnakhatiwada.github.io/js_excercise_2-7/";
-
-          document.getElementById("excercie8code").href =
-            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/js_excercise8";
-          document.getElementById("excercie8demo").href =
-            "https://krishnakhatiwada.github.io/js_excercise8/";
-
-          document.getElementById("excercie9code").href =
-            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/js_excercise9";
-          document.getElementById("excercie9demo").href =
-            "https://krishnakhatiwada.github.io/js_excercise9/";
-
-          document.getElementById("slidercode").href =
-            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/JsAssignment/Ast1";
-          document.getElementById("sliderdemo").href =
-            "https://krishnakhatiwada.github.io/JsAssignment/Ast1/";
-
-          document.getElementById("slidercoderes").href =
-            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/JsAssignment/Ast2";
-          document.getElementById("sliderdemores").href =
-            "https://krishnakhatiwada.github.io/JsAssignment/Ast2/";
-
-          document.getElementById("colideCode").href =
-            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/JsAssignment/Ast3";
-          document.getElementById("colideDemo").href =
-            "https://krishnakhatiwada.github.io/JsAssignment/Ast3/";
-
-          document.getElementById("carGameCode").href =
-            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/JsAssignment/Ast4";
-          document.getElementById("carGameDemo").href =
-            "https://krishnakhatiwada.github.io/JsAssignment/Ast4/";
-
-          document.getElementById("fbCode").href =
-            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/JsAssignment/Ast5";
-          document.getElementById("fbDemo").href =
-            "https://krishnakhatiwada.github.io/JsAssignment/Ast5/";
-
-          document.getElementById("helixCode").href =
-            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/JsAssignment/Ast6";
-          document.getElementById("helixDemo").href =
-            "https://krishnakhatiwada.github.io/JsAssignment/Ast6/";
-
-          document.getElementById("zombieCode").href =
-            "https://github.com/Krishnakhatiwada/Krishnakhatiwada.github.io/tree/master/JsAssignment/final_ast";
-          document.getElementById("zombieDemo").href =
-            "https://krishnakhatiwada.github.io/JsAssignment/final_ast/";
-
-          document.getElementById("main").hidden = false;
-          document.getElementById("loading").hidden = true;
+          // Hide loading, show main content
+          document.getElementById("loading").style.display = 'none';
+          document.getElementById("main").style.display = 'block';
+          
+          // Set current year
+          document.getElementById("currentYear").textContent = new Date().getFullYear();
+          
+          // Add scroll effect to navbar
+          window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+              navbar.style.padding = '0.5rem 0';
+              navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+              navbar.style.padding = '1rem 0';
+              navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+          });
         })
         .catch((err) => {
           console.log(err);
+          document.getElementById("loading").style.display = 'none';
+          document.getElementById("main").style.display = 'block';
+          document.getElementById("currentYear").textContent = new Date().getFullYear();
+          
+          // Set default profile picture if GitHub fails
+          document.getElementById("profilepic").src = "https://ui-avatars.com/api/?name=Krishna+Khatiwada&size=200&background=2563eb&color=fff&bold=true";
         });
+
+      // Smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            if (window.innerWidth < 992) {
+              const navbarCollapse = document.querySelector('.navbar-collapse');
+              if (navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+              }
+            }
+          }
+        });
+      });
+
+      // Add intersection observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements for animation
+      document.querySelectorAll('.card-hover, .project-card, .education-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(el);
+      });
     </script>
   </body>
 </html>
